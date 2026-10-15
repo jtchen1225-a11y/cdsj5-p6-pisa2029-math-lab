@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聖若瑟教區中學第五校 · 小六數學思維課 (30週) 面向 PISA 2029 互動實驗室</title>
+  <meta name="description" content="聖若瑟教區中學第五校小六數學思維課30週校本教材互動實驗室，面向PISA 2029全球素養培育，涵蓋數量、空間與形狀、變化與關係、不確定性與數據及MAIL/LDW前瞻素養。">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header Bar -->
+  <header class="app-header">
+    <div class="header-left">
+      <button id="sidebarToggle" class="btn-icon" title="切換選單"><i class="fa-solid fa-bars"></i></button>
+      <div class="brand">
+        <span class="badge-school">聖若瑟五校 · 校本教材</span>
+        <h1 class="brand-title">小六數學思維課 30 週互動實驗室</h1>
+        <span class="badge-pisa"><i class="fa-solid fa-compass"></i> 面向 PISA 2029</span>
+      </div>
+    </div>
+    <div class="header-center">
+      <div class="week-stepper">
+        <button id="btnPrevWeek" class="btn-step" title="上一週 (←)"><i class="fa-solid fa-chevron-left"></i> 上一週</button>
+        <select id="weekSelect" class="week-select"></select>
+        <button id="btnNextWeek" class="btn-step" title="下一週 (→)">下一週 <i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+    <div class="header-right">
+      <button id="btnToggleCER" class="btn-action"><i class="fa-solid fa-gavel"></i> <span class="hide-sm">CER真相</span></button>
+      <button id="btnFullscreen" class="btn-icon" title="全螢幕投影"><i class="fa-solid fa-expand"></i></button>
+    </div>
+  </header>
+
+  <!-- Main Container with Sidebar & Content -->
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="app-sidebar">
+      <div class="sidebar-header">
+        <div class="filter-tabs">
+          <button class="filter-tab active" data-filter="all">全部 (30)</button>
+          <button class="filter-tab" data-filter="t1">上學期 (15)</button>
+          <button class="filter-tab" data-filter="t2">下學期 (15)</button>
+        </div>
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="lessonSearch" placeholder="搜尋週次、主題或關鍵字...">
+        </div>
+      </div>
+      <div id="lessonList" class="lesson-list">
+        <!-- Rendered via JS -->
+      </div>
+    </aside>
+
+    <!-- Main Experiment Canvas & Lab Area -->
+    <main class="app-main">
+      <!-- Lesson Info Bar -->
+      <section class="lesson-banner">
+        <div class="banner-top">
+          <span id="bannerWeek" class="tag-week">第 01 週</span>
+          <span id="bannerDomain" class="tag-domain">數量 (Quantity)</span>
+          <span id="bannerUnit" class="tag-unit">6上 課次1: 生活中的比 (一)</span>
+        </div>
+        <h2 id="bannerTitle" class="lesson-headline">果汁濃度與比值的本質——破除『數字大就濃』的直覺迷思</h2>
+        <p id="bannerCoords" class="lesson-coords"></p>
+      </section>
+
+      <!-- Grid Layout: Left Control & Info / Right Interactive Sandbox -->
+      <div class="lab-grid">
+        <!-- Left Panel: Context & Instructions & CER -->
+        <div class="panel-left">
+          <!-- Real-world Context Card -->
+          <div class="card context-card">
+            <div class="card-header">
+              <i class="fa-solid fa-newspaper text-primary"></i>
+              <h3>一、 PISA 2029 素養情境導引與文本審查</h3>
+            </div>
+            <div class="card-body">
+              <div id="contextText" class="context-desc"></div>
+              <div class="misconception-box">
+                <div class="miscon-title"><i class="fa-solid fa-triangle-exclamation text-warning"></i> 思考陷阱與直覺迷思：</div>
+                <div id="misconceptionText" class="miscon-desc"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experiment Guide Card -->
+          <div class="card guide-card">
+            <div class="card-header">
+              <i class="fa-solid fa-vial text-info"></i>
+              <h3>二、 課堂動態實驗操作指引</h3>
+            </div>
+            <div class="card-body">
+              <div id="expPrinciple" class="guide-principle"></div>
+              <ol id="expStepsList" class="steps-list"></ol>
+            </div>
+          </div>
+
+          <!-- CER Argumentation Card -->
+          <div id="cerCard" class="card cer-card collapsed">
+            <div class="card-header" id="cerHeader">
+              <i class="fa-solid fa-shield-halved text-success"></i>
+              <h3>三、 CER 學術論證實踐（點擊展開/收起真相）</h3>
+              <i class="fa-solid fa-chevron-down cer-arrow"></i>
+            </div>
+            <div class="card-body cer-content">
+              <div class="cer-item cer-claim">
+                <span class="cer-tag tag-claim">🟢 主張 (Claim)</span>
+                <p id="cerClaim"></p>
+              </div>
+              <div class="cer-item cer-evidence">
+                <span class="cer-tag tag-evidence">🟡 證據 (Evidence)</span>
+                <p id="cerEvidence"></p>
+              </div>
+              <div class="cer-item cer-reasoning">
+                <span class="cer-tag tag-reasoning">🔵 推理 (Reasoning)</span>
+                <p id="cerReasoning"></p>
+              </div>
+              <div class="cer-item cer-rebuttal">
+                <span class="cer-tag tag-rebuttal">🔴 反駁 (Rebuttal)</span>
+                <p id="cerRebuttal"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel: Dynamic Interactive Sandbox -->
+        <div class="panel-right">
+          <div class="card sandbox-card">
+            <div class="card-header sandbox-header">
+              <div class="sandbox-title">
+                <i class="fa-solid fa-sliders text-primary"></i>
+                <h3 id="sandboxName">動態實驗台</h3>
+              </div>
+              <div class="sandbox-actions">
+                <button id="btnResetExp" class="btn-secondary btn-sm" title="重置本實驗 (R)"><i class="fa-solid fa-rotate-left"></i> 重置</button>
+                <button id="btnRecordData" class="btn-primary btn-sm" title="記錄當前參數"><i class="fa-solid fa-camera"></i> 記錄數據</button>
+              </div>
+            </div>
+
+            <!-- Sandbox Interactive Body -->
+            <div class="sandbox-body">
+              <!-- Controls Bar: Sliders, Buttons, Inputs -->
+              <div id="sandboxControls" class="sandbox-controls">
+                <!-- Dynamically populated by JS based on current week -->
+              </div>
+
+              <!-- Interactive Visual Canvas / SVG Stage -->
+              <div id="sandboxStage" class="sandbox-stage">
+                <canvas id="mainCanvas" width="700" height="420"></canvas>
+                <div id="svgStageOverlay" class="svg-overlay"></div>
+              </div>
+
+              <!-- Live Formula & Readout Bar -->
+              <div id="sandboxReadout" class="sandbox-readout">
+                <!-- Real-time metrics -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Observation Table Card -->
+          <div class="card table-card">
+            <div class="card-header">
+              <i class="fa-solid fa-table text-primary"></i>
+              <h3>動態實驗觀測紀錄表</h3>
+              <button id="btnClearTable" class="btn-link btn-xs">清空記錄</button>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table id="obsTable" class="obs-table">
+                  <thead id="obsThead"></thead>
+                  <tbody id="obsTbody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- CPS Challenge Card -->
+          <div class="card cps-card">
+            <div class="card-header">
+              <i class="fa-solid fa-brain text-warning"></i>
+              <h3>四、 PISA 2029 計算思維與演算法拓展挑戰</h3>
+            </div>
+            <div class="card-body">
+              <p id="cpsChallengeText" class="cps-desc"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast"></div>
+
+  <!-- Data Script -->
+  <script src="app.js"></script>
+</body>
+</html>
