@@ -1,4 +1,4 @@
-// 聖若瑟教區中學第五校 · 小六數學思維課 (30週) 面向 PISA 2029 互動實驗室核心引擎
+// 聖若瑟教區中學第五校 · 小六數學思維課 (30週) 全球前瞻素養互動實驗室核心引擎 (OMML 原生方程式支援)
 const LESSONS_DATA = [
   {
     "week": 1,
@@ -6,7 +6,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次1: 生活中的比 (一)",
     "title": "果汁濃度與比值的本質——破除『數字大就濃』的直覺迷思",
     "domain": "數量 (Quantity)",
-    "pisa_coords": "【內容範疇】數量 (Quantity) | 【情境】日常生活 | 【認知過程】數學推理與概念轉化 | 【前瞻要素】CER論證、文本審查",
+    "pisa_coords": "【思維範疇】數量 (Quantity) | 【情境】日常生活 | 【認知過程】數學推理與概念轉化 | 【前瞻要素】CER論證、文本審查",
     "text_scrutiny": "展示市售特調濃縮橙汁包裝標籤。標籤A寫著『1:2 WATER』，標籤B寫著『1:4 WATER』，標籤C寫著『1:5 WATER』。某網購評測宣稱：『C款數字達到5，是三款中濃度最高、口感最濃郁的果汁！』引導學生審查商品標籤文本，界定前項與後項的真實物理意義。",
     "misconception": "學生直覺認為『比中的數字 5 比 2 和 4 大，所以 1:5 最濃』，混淆了溶劑增加導致稀釋的物理本質；或誤以為 1:4 代表整杯總量只有 4 份（混淆部分比部分與部分比整體）。",
     "cer": {
@@ -65,7 +65,10 @@ const LESSONS_DATA = [
         "極深橙紅"
       ]
     ],
-    "summary_prompt": "【規律發現】當前項（果汁）固定為 1 時，後項（清水）的數值越大，比值越______，果汁顏色越______，代表濃度越______。"
+    "summary_prompt": "【規律發現】當前項（果汁）固定為 1 時，後項（清水）的數值越大，比值越______，果汁顏色越______，代表濃度越______。",
+    "omml_title": "比值與整體百分比濃度公式",
+    "tex_formula": "\\text{比值} = \\frac{\\text{果汁}}{\\text{清水}} = \\frac{j}{w}, \\quad \\text{整體濃度} = \\frac{\\text{果汁}}{\\text{果汁} + \\text{清水}} \\times 100\\% = \\frac{j}{j + w} \\times 100\\%",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>比值=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>果汁</m:t></m:r></m:num><m:den><m:r><m:t>清水</m:t></m:r></m:den></m:f><m:r><m:t>,  濃度=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>果汁</m:t></m:r></m:num><m:den><m:r><m:t>果汁+清水</m:t></m:r></m:den></m:f><m:r><m:t>×100%</m:t></m:r></m:oMath>"
   },
   {
     "week": 2,
@@ -73,7 +76,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次2: 生活中的比 (二)",
     "title": "按比例分配與校園防疫消殺——公共衛生中的數學建模",
     "domain": "數量 (Quantity)",
-    "pisa_coords": "【內容範疇】數量 (Quantity) | 【情境】社會與校園公共衛生 | 【認知過程】數學建模與計算求解 | 【前瞻要素】部分與整體審查、精確計量",
+    "pisa_coords": "【思維範疇】數量 (Quantity) | 【情境】社會與校園公共衛生 | 【認知過程】數學建模與計算求解 | 【前瞻要素】部分與整體審查、精確計量",
     "text_scrutiny": "澳門衛生局校園指引：『預防呼吸道傳染病日常消毒，需調配 1:99 稀釋漂白水；嘔吐物處理需調配 1:49 稀釋漂白水』。校工叔叔手持 5 公升（5000 mL）的消毒噴霧桶，提問：『調配 1:99 的消毒液，是否直接加 50 mL 漂白水再加滿水？』",
     "misconception": "學生常直接用 5000 × (1/99) 進行計算，誤將後項 99 當作全量總份數，混淆了『部分:部分』與『部分:整體（1+99=100）』的數學結構。",
     "cer": {
@@ -132,7 +135,10 @@ const LESSONS_DATA = [
         "4,975 mL (不合格)"
       ]
     ],
-    "summary_prompt": "【規律發現】按比例分配時，必須先將各部分的比相加求出______，再用總量除以總份數求出______，最後乘以各自的份數。"
+    "summary_prompt": "【規律發現】按比例分配時，必須先將各部分的比相加求出______，再用總量除以總份數求出______，最後乘以各自的份數。",
+    "omml_title": "按比例分配與原液稀釋公式",
+    "tex_formula": "V_{\\text{原液}} = \\frac{V_{\\text{總量}}}{1 + N} \\times 1, \\quad V_{\\text{清水}} = \\frac{V_{\\text{總量}}}{1 + N} \\times N",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:sSub><m:sSubPr/><m:e><m:r><m:t>V</m:t></m:r></m:e><m:sub><m:r><m:t>原液</m:t></m:r></m:sub></m:sSub><m:r><m:t>=</m:t></m:r><m:f><m:fPr/><m:num><m:sSub><m:sSubPr/><m:e><m:r><m:t>V</m:t></m:r></m:e><m:sub><m:r><m:t>總量</m:t></m:r></m:sub></m:sSub></m:num><m:den><m:r><m:t>1+N</m:t></m:r></m:den></m:f><m:r><m:t>,  </m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>V</m:t></m:r></m:e><m:sub><m:r><m:t>清水</m:t></m:r></m:sub></m:sSub><m:r><m:t>=</m:t></m:r><m:f><m:fPr/><m:num><m:sSub><m:sSubPr/><m:e><m:r><m:t>V</m:t></m:r></m:e><m:sub><m:r><m:t>總量</m:t></m:r></m:sub></m:sSub><m:r><m:t>×N</m:t></m:r></m:num><m:den><m:r><m:t>1+N</m:t></m:r></m:den></m:f></m:oMath>"
   },
   {
     "week": 3,
@@ -140,7 +146,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次3: 分數除法 (一)",
     "title": "分物悖論與倒數的幾何實體意義——為什麼除以分數等於乘以倒數？",
     "domain": "數量 (Quantity)",
-    "pisa_coords": "【內容範疇】數量 (Quantity) | 【情境】科學與工藝裁切 | 【認知過程】形式化數學推理與證明 | 【前瞻要素】幾何面積模型、數理本質詮釋",
+    "pisa_coords": "【思維範疇】數量 (Quantity) | 【情境】科學與工藝裁切 | 【認知過程】形式化數學推理與證明 | 【前瞻要素】幾何面積模型、數理本質詮釋",
     "text_scrutiny": "課本給出公式：a ÷ (b/c) = a × (c/b)。課堂提問：『一條 3 米長的彩帶，每 1/2 米剪成一段，可以剪幾段？每 3/4 米剪成一段，可以剪幾段？』為什麼原本代表分物變小的除法，除以一個真分數後，商反而比被除數還要大？",
     "misconception": "學生受整數除法思維定勢影響，堅信『除法一定越除越小』；對於『乘以倒數』僅僅是死記硬背口訣，完全不理解背後包含的『1裡面包含多少個分數單位』的度量原理。",
     "cer": {
@@ -199,7 +205,10 @@ const LESSONS_DATA = [
         "商(6) > 被除數(4)"
       ]
     ],
-    "summary_prompt": "【規律發現】當除數小於 1（真分數）時，商比被除數______；除以一個分數等於乘以這個分數的______。"
+    "summary_prompt": "【規律發現】當除數小於 1（真分數）時，商比被除數______；除以一個分數等於乘以這個分數的______。",
+    "omml_title": "分數除法乘以倒數恆等式",
+    "tex_formula": "a \\div \\frac{b}{c} = a \\times \\frac{c}{b} = \\frac{a \\times c}{b} \\quad (b, c \\neq 0)",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>a÷</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>b</m:t></m:r></m:num><m:den><m:r><m:t>c</m:t></m:r></m:den></m:f><m:r><m:t>=a×</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>c</m:t></m:r></m:num><m:den><m:r><m:t>b</m:t></m:r></m:den></m:f><m:r><m:t>=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>a·c</m:t></m:r></m:num><m:den><m:r><m:t>b</m:t></m:r></m:den></m:f></m:oMath>"
   },
   {
     "week": 4,
@@ -207,7 +216,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次4: 分數除法 (二)",
     "title": "合作工程與工作效率極限預測——破解『天數相加除以二』的直覺陷阱",
     "domain": "變化與關係 (Change & Relationships)",
-    "pisa_coords": "【內容範疇】變化與關係 (Change & Relationships) | 【情境】工程與公共建設 | 【認知過程】代數建模與速率分析 | 【前瞻要素】系統效率、反直覺論證",
+    "pisa_coords": "【思維範疇】變化與關係 (Change & Relationships) | 【情境】工程與公共建設 | 【認知過程】代數建模與速率分析 | 【前瞻要素】系統效率、反直覺論證",
     "text_scrutiny": "澳門輕軌東線某段綠化改善工程。招標公告顯示：甲工程隊若單獨施工需 6 天完工，乙工程隊若單獨施工需 12 天完工。市政署工程會議上，某實習工程師提議：『兩隊合作施工，所需時間應該是 (6 + 12) ÷ 2 = 9 天。』請你審查該提案是否合乎工程數學邏輯。",
     "misconception": "學生普遍將『時間』直接進行算術平均，認為兩人合作的時間介於兩人各自時間之間（(6+12)/2=9），完全忽略了『合作會加快進度、總時間必然少於任何單一隊伍』的物理規律。",
     "cer": {
@@ -276,7 +285,10 @@ const LESSONS_DATA = [
         "5 天"
       ]
     ],
-    "summary_prompt": "【規律發現】工程問題中，能夠直接相加的是『______（每日完成量）』，而不是『完成天數』；合作工期必然______（大於/小於）最快那一隊的單獨工期。"
+    "summary_prompt": "【規律發現】工程問題中，能夠直接相加的是『______（每日完成量）』，而不是『完成天數』；合作工期必然______（大於/小於）最快那一隊的單獨工期。",
+    "omml_title": "合作工程總效率與工期公式",
+    "tex_formula": "E_{\\text{總}} = \\frac{1}{d_A} + \\frac{1}{d_B}, \\quad T_{\\text{合作}} = \\frac{1}{E_{\\text{總}}} = \\frac{d_A \\times d_B}{d_A + d_B}",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:sSub><m:sSubPr/><m:e><m:r><m:t>E</m:t></m:r></m:e><m:sub><m:r><m:t>總</m:t></m:r></m:sub></m:sSub><m:r><m:t>=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den><m:sSub><m:sSubPr/><m:e><m:r><m:t>d</m:t></m:r></m:e><m:sub><m:r><m:t>A</m:t></m:r></m:sub></m:sSub></m:den></m:f><m:r><m:t>+</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den><m:sSub><m:sSubPr/><m:e><m:r><m:t>d</m:t></m:r></m:e><m:sub><m:r><m:t>B</m:t></m:r></m:sub></m:sSub></m:den></m:f><m:r><m:t>,  </m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>T</m:t></m:r></m:e><m:sub><m:r><m:t>合作</m:t></m:r></m:sub></m:sSub><m:r><m:t>=</m:t></m:r><m:f><m:fPr/><m:num><m:sSub><m:sSubPr/><m:e><m:r><m:t>d</m:t></m:r></m:e><m:sub><m:r><m:t>A</m:t></m:r></m:sub></m:sSub><m:r><m:t>·</m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>d</m:t></m:r></m:e><m:sub><m:r><m:t>B</m:t></m:r></m:sub></m:sSub></m:num><m:den><m:sSub><m:sSubPr/><m:e><m:r><m:t>d</m:t></m:r></m:e><m:sub><m:r><m:t>A</m:t></m:r></m:sub></m:sSub><m:r><m:t>+</m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>d</m:t></m:r></m:e><m:sub><m:r><m:t>B</m:t></m:r></m:sub></m:sSub></m:den></m:f></m:oMath>"
   },
   {
     "week": 5,
@@ -284,7 +296,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次5: 分數四則混合計算",
     "title": "促銷優惠折上折與簡算策略——運算順序對消費者決策的影響",
     "domain": "數量 (Quantity)",
-    "pisa_coords": "【內容範疇】數量 (Quantity) | 【情境】個人理財與消費決策 | 【認知過程】演算法比較與最佳化 | 【前瞻要素】LDW計算思維、交換律適用邊界",
+    "pisa_coords": "【思維範疇】數量 (Quantity) | 【情境】個人理財與消費決策 | 【認知過程】演算法比較與最佳化 | 【前瞻要素】LDW計算思維、交換律適用邊界",
     "text_scrutiny": "澳門某大型綜合商場週年慶推出兩款結帳優惠方案（限滿 500 元使用）：\n方案 A：『全單先享八折（× 4/5），折後金額再立減 100 元』；\n方案 B：『全單先立減 100 元，剩餘金額再享八折（× 4/5）』。\n小明媽媽選購了一件標價 800 元的大衣，銷售員推薦方案 A，宣稱『先打大折扣最划算』。請你進行數學審計。",
     "misconception": "學生直覺認為『乘法和減法不管誰先誰後，算出來應該差不多』，或者被『先打八折減得多』的宣傳語誤導，無法從代數表達式清晰看到常數項是否被同比例縮放。",
     "cer": {
@@ -348,7 +360,10 @@ const LESSONS_DATA = [
         "省 20 元"
       ]
     ],
-    "summary_prompt": "【規律發現】對消費者而言，永遠是『先______後______』更省錢；兩者的差額剛好等於 立減金額 × (1 - 折扣率)。"
+    "summary_prompt": "【規律發現】對消費者而言，永遠是『先______後______』更省錢；兩者的差額剛好等於 立減金額 × (1 - 折扣率)。",
+    "omml_title": "促銷順序分配律差額公式",
+    "tex_formula": "\\Delta = (P - M) \\times d - (P \\times d - M) = M \\times (1 - d)",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>Δ=(P-M)·d-(P·d-M)=M·(1-d)</m:t></m:r></m:oMath>"
   },
   {
     "week": 6,
@@ -356,7 +371,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次6: 小數除法與循環小數",
     "title": "公共交通票價結算與進位仲裁——四捨五入 vs 進一法 vs 去尾法",
     "domain": "數量 (Quantity)",
-    "pisa_coords": "【內容範疇】數量 (Quantity) | 【情境】社會生活與市政管理 | 【認知過程】現實情境約束下的數學取捨 | 【前瞻要素】數理決策、商的近似值",
+    "pisa_coords": "【思維範疇】數量 (Quantity) | 【情境】社會生活與市政管理 | 【認知過程】現實情境約束下的數學取捨 | 【前瞻要素】數理決策、商的近似值",
     "text_scrutiny": "澳門輕軌與巴士換乘優惠結算。某旅行團 35 人包租一輛限載 8 人的穿梭小巴，以及每人支付 10 元購買特價紀念車票（3 張特價 10 元，每張 3.333...元）。售票系統與租車調度系統中，數值計算遇到小數與循環小數時，如何選擇取整規則？",
     "misconception": "學生習慣死板套用『四捨五入』法則，例如算得需要 4.375 輛車時四捨五入成 4 輛，導致有 3 名遊客被遺留在車站；或在金額計算中忽視尾數累積帶來的系統虧損。",
     "cer": {
@@ -369,7 +384,7 @@ const LESSONS_DATA = [
     "exp_name": "公共交通票價結算與進位仲裁實驗台",
     "exp_principle": "現實決策的邊界約束：載客車輛不可超載必須使用進一法 (Ceil)；材料裁剪受限於整件完整性必須使用去尾法 (Floor)；貨幣找零遵循四捨五入法 (Round)。",
     "exp_steps": [
-      "1. 在實驗台滑桿調節乘客總人數（10 至 80 人）與車輛載客上限（8人、12人、20人）。",
+      "1. 在實驗台滑桿調節乘客人數（10 至 80 人）與車輛載客上限（8人、12人、20人）。",
       "2. 切換『四捨五入』、『進一法』、『去尾法』按鈕，觀察派車結果與滯留乘客警戒燈。",
       "3. 切換至『布料做衣服』模式，輸入布料總長度與單件用布量，對比去尾法的物理必然性。"
     ],
@@ -420,7 +435,10 @@ const LESSONS_DATA = [
         "四捨五入 (3.3元)"
       ]
     ],
-    "summary_prompt": "【規律發現】生活中的數值取捨不能脫離現實邊界。凡是『裝載、運送、容納』必須用______法；凡是『裁剪、製作、兌換』必須用______法。"
+    "summary_prompt": "【規律發現】生活中的數值取捨不能脫離現實邊界。凡是『裝載、運送、容納』必須用______法；凡是『裁剪、製作、兌換』必須用______法。",
+    "omml_title": "進一法與去尾法邊界取整函數",
+    "tex_formula": "N_{\\text{車輛}} = \\lceil \\frac{P}{C} \\rceil, \\quad N_{\\text{成衣}} = \\lfloor \\frac{L}{U} \\rfloor",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:sSub><m:sSubPr/><m:e><m:r><m:t>N</m:t></m:r></m:e><m:sub><m:r><m:t>車</m:t></m:r></m:sub></m:sSub><m:r><m:t>=⌈P/C⌉,  </m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>N</m:t></m:r></m:e><m:sub><m:r><m:t>衣</m:t></m:r></m:sub></m:sSub><m:r><m:t>=⌊L/U⌋</m:t></m:r></m:oMath>"
   },
   {
     "week": 7,
@@ -428,7 +446,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次7: 小數四則混合與估算",
     "title": "家庭階梯電費與碳排放計算——非線性定價與氣候永續意識",
     "domain": "變化與關係 (Change & Relationships)",
-    "pisa_coords": "【內容範疇】變化與關係 (Change & Relationships) | 【情境】科學與環境永續 | 【認知過程】分段函數建模與數據分析 | 【前瞻要素】氣候素養、節能決策",
+    "pisa_coords": "【思維範疇】變化與關係 (Change & Relationships) | 【情境】科學與環境永續 | 【認知過程】分段函數建模與數據分析 | 【前瞻要素】氣候素養、節能決策",
     "text_scrutiny": "澳門電力公司（CEM）家庭階梯電費單據審查：\n• 第一階梯（1-200度）：每度 1.15 澳門元\n• 第二階梯（201-400度）：每度 1.35 澳門元\n• 第三階梯（401度以上）：每度 1.60 澳門元\n某家庭夏季用電 450 度，父親主張：『450度屬於第三階梯，所以總電費直接用 450 × 1.60 = 720 元！』請你審查該計費是否正確。",
     "misconception": "學生極易將『分段階梯收費』誤解為『全額累進跳價』，認為只要超過門檻，全部用電量都按最高單價計算，混淆了邊際增量與總量計費的本質區別。",
     "cer": {
@@ -492,7 +510,10 @@ const LESSONS_DATA = [
         "省 140 元"
       ]
     ],
-    "summary_prompt": "【規律發現】階梯電費是______累進計費，超出門檻的部分才適用高單價，這種定價策略既保障了基礎民生，又能透過價格槓桿激勵______。"
+    "summary_prompt": "【規律發現】階梯電費是______累進計費，超出門檻的部分才適用高單價，這種定價策略既保障了基礎民生，又能透過價格槓桿激勵______。",
+    "omml_title": "家庭階梯電費分段累進函數",
+    "tex_formula": "\\text{Cost}(E) = 200 \\times 1.15 + 200 \\times 1.35 + (E - 400) \\times 1.60 \\quad (E > 400)",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>Cost(E)=200×1.15+200×1.35+(E-400)×1.60</m:t></m:r></m:oMath>"
   },
   {
     "week": 8,
@@ -500,7 +521,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次8: 百分數的認識",
     "title": "商業宣傳與商品標籤文字陷阱——MAIL 媒體素養與百分數批判",
     "domain": "數量 (Quantity)",
-    "pisa_coords": "【內容範疇】數量 (Quantity) | 【情境】媒體消費與商業宣傳 | 【認知過程】文本語意辨析與批判性思考 | 【前瞻要素】MAIL 媒體與AI素養、數據求真",
+    "pisa_coords": "【思維範疇】數量 (Quantity) | 【情境】媒體消費與商業宣傳 | 【認知過程】文本語意辨析與批判性思考 | 【前瞻要素】MAIL 媒體與AI素養、數據求真",
     "text_scrutiny": "電視與網路爆款飲料廣告聲稱：\n廣告語甲：『全新升級配方，天然維生素C含量【提高 50%】！』\n廣告語乙：『本飲品中，天然維生素C含量【高達 50%】！』\n某網紅主播在帶貨影片中宣稱：『甲乙兩種說法完全一樣，就是半瓶都是純維他命！』引導學生審視廣告文本與百分數的基底基準量。",
     "misconception": "學生容易被廣告語中的大數字『50%』所震撼，混淆了『相對變化率（比原來的基礎增加50%）』與『絕對份額（在整體中佔比50%）』，失去對基準量（Base）的警惕。",
     "cer": {
@@ -559,7 +580,10 @@ const LESSONS_DATA = [
         "避重就輕，轉移焦點"
       ]
     ],
-    "summary_prompt": "【規律發現】審查商業宣傳中的百分數時，第一步必須追問：『這個百分數的______（單位1）究竟是什麼？』絕不能拋開基準量只看數字大小。"
+    "summary_prompt": "【規律發現】審查商業宣傳中的百分數時，第一步必須追問：『這個百分數的______（單位1）究竟是什麼？』絕不能拋開基準量只看數字大小。",
+    "omml_title": "相對增量與絕對成分佔比辨析",
+    "tex_formula": "A_{\\text{增量}} = A_0 \\times (1 + r\\%), \\quad P_{\\text{絕對}} = \\frac{A}{V_{\\text{總量}}} \\times 100\\%",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:sSub><m:sSubPr/><m:e><m:r><m:t>A</m:t></m:r></m:e><m:sub><m:r><m:t>新</m:t></m:r></m:sub></m:sSub><m:r><m:t>=</m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>A</m:t></m:r></m:e><m:sub><m:r><m:t>0</m:t></m:r></m:sub></m:sSub><m:r><m:t>·(1+r%),  P=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>A</m:t></m:r></m:num><m:den><m:sSub><m:sSubPr/><m:e><m:r><m:t>V</m:t></m:r></m:e><m:sub><m:r><m:t>總</m:t></m:r></m:sub></m:sSub></m:den></m:f><m:r><m:t>×100%</m:t></m:r></m:oMath>"
   },
   {
     "week": 9,
@@ -567,7 +591,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次9: 百分數、分數、小數互化",
     "title": "澳門格蘭披治大賽車過彎勝率——多模態數值的統一表徵與決策",
     "domain": "不確定性與數據 (Uncertainty & Data)",
-    "pisa_coords": "【內容範疇】不確定性與數據 (Uncertainty & Data) | 【情境】體育競技與即時戰略 | 【認知過程】數值轉換與大小排序決策 | 【前瞻要素】多表徵轉化、機率直覺",
+    "pisa_coords": "【思維範疇】不確定性與數據 (Uncertainty & Data) | 【情境】體育競技與即時戰略 | 【認知過程】數值轉換與大小排序決策 | 【前瞻要素】多表徵轉化、機率直覺",
     "text_scrutiny": "澳門東望洋賽道葡京彎歷史數據監控螢幕。車隊總工程師面前顯示三位頂級車手在雨天極限過彎的成功率數據：\n• 車手 A（葡萄牙）：過彎成功率為 3/8\n• 車手 B（中國澳門）：過彎成功率為 37%\n• 車手 C（德國）：過彎成功率為 0.385\n賽事最後一圈即將下大雨，車隊經理必須派出過彎成功率最高的王牌車手出戰，現場工程師爭論不休。",
     "misconception": "學生面對不同數值形態（分數、小數、百分數）時容易感到混亂，直接比分子（3比37比0.385），缺乏將不同表徵形式統一度量標準（歸一化）的思維習慣。",
     "cer": {
@@ -631,7 +655,10 @@ const LESSONS_DATA = [
         "潛力黑馬"
       ]
     ],
-    "summary_prompt": "【規律發現】比較不同形態的數值時，應先將它們統一轉化為______或______，才能準確客觀地判定大小關係。"
+    "summary_prompt": "【規律發現】比較不同形態的數值時，應先將它們統一轉化為______或______，才能準確客觀地判定大小關係。",
+    "omml_title": "多模態勝率歸一化標準排序",
+    "tex_formula": "\\frac{3}{8} = 0.375 = 37.5\\% > 37.0\\%, \\quad 0.385 = 38.5\\%",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:f><m:fPr/><m:num><m:r><m:t>3</m:t></m:r></m:num><m:den><m:r><m:t>8</m:t></m:r></m:den></m:f><m:r><m:t>=0.375=37.5%&gt;37.0%</m:t></m:r></m:oMath>"
   },
   {
     "week": 10,
@@ -639,7 +666,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次10: 立體圖形與展開圖",
     "title": "電商快遞包裝工程與空間幾何——正方體 11 種展開圖的邏輯排除演算法",
     "domain": "空間與形狀 (Space & Shape)",
-    "pisa_coords": "【內容範疇】空間與形狀 (Space & Shape) | 【情境】工業設計與物流製造 | 【認知過程】二維展開與三維折疊空間旋轉 | 【前瞻要素】LDW空間推理、排除演算法",
+    "pisa_coords": "【思維範疇】空間與形狀 (Space & Shape) | 【情境】工業設計與物流製造 | 【認知過程】二維展開與三維折疊空間旋轉 | 【前瞻要素】LDW空間推理、排除演算法",
     "text_scrutiny": "快遞自動化製箱工廠面臨包裝用紙浪費問題。工程師出示了 6 個相連正方形組成的平面紙板圖形。質檢員拿著圖樣提問：『在 35 種六連塊排列中，為什麼只有恰好 11 種可以無重疊摺疊成密閉正方體？』市面上某供應商送來的『田字型』與『凹字型』設計是否可用？",
     "misconception": "學生只能靠空間想像力在腦海中旋轉方塊，容易頭暈出錯；缺乏用拓撲約束規則（如『出現田字必重疊』、『出現凹字必重疊』）進行邏輯排除的系統性演算法思維。",
     "cer": {
@@ -706,7 +733,10 @@ const LESSONS_DATA = [
         "廢品方案，不可用"
       ]
     ],
-    "summary_prompt": "【規律發現】正方體展開圖中，若出現『______字型』或『______字型』結構，必然無法摺疊成正方體；中間一行相隔一個的兩個面互為______面。"
+    "summary_prompt": "【規律發現】正方體展開圖中，若出現『______字型』或『______字型』結構，必然無法摺疊成正方體；中間一行相隔一個的兩個面互為______面。",
+    "omml_title": "正方體表面積與體積幾何守恆",
+    "tex_formula": "S_{\\text{表面積}} = 6a^2, \\quad V_{\\text{體積}} = a^3",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:sSub><m:sSubPr/><m:e><m:r><m:t>S</m:t></m:r></m:e><m:sub><m:r><m:t>表</m:t></m:r></m:sub></m:sSub><m:r><m:t>=6</m:t></m:r><m:sSup><m:sSupPr/><m:e><m:r><m:t>a</m:t></m:r></m:e><m:sup><m:r><m:t>2</m:t></m:r></m:sup></m:sSup><m:r><m:t>,  V=</m:t></m:r><m:sSup><m:sSupPr/><m:e><m:r><m:t>a</m:t></m:r></m:e><m:sup><m:r><m:t>3</m:t></m:r></m:sup></m:sSup></m:oMath>"
   },
   {
     "week": 11,
@@ -714,7 +744,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次11: 三視圖與空間定向",
     "title": "無人機航拍與澳門世遺牌坊重建——正視與俯視下的最大與最小積木約束",
     "domain": "空間與形狀 (Space & Shape)",
-    "pisa_coords": "【內容範疇】空間與形狀 (Space & Shape) | 【情境】工程測繪與文化遺產保護 | 【認知過程】二維投影到三維實體逆向推理 | 【前瞻要素】LDW空間演算法、極值約束",
+    "pisa_coords": "【思維範疇】空間與形狀 (Space & Shape) | 【情境】工程測繪與文化遺產保護 | 【認知過程】二維投影到三維實體逆向推理 | 【前瞻要素】LDW空間演算法、極值約束",
     "text_scrutiny": "澳門文化局無人機測繪大三巴牌坊周邊保護區基座。測繪雷達生成兩張二維正交投影圖：正視圖（Front View）顯示為 3 列高分別為 2, 3, 1；俯視圖（Top View）顯示底層佔據 3×3 網格中的 5 個格子。文保專家提出修復預算時提問：『建造這個基座，最少需要多少個標準立方石塊？最多可能用掉多少塊？』",
     "misconception": "學生面對雙視圖逆向還原三維物體時，常常以為答案只有唯一一種，無法理解『遮擋產生的信息不確定性』，缺乏在俯視圖上標註每列最大高度以求解極限範圍的矩陣思維。",
     "cer": {
@@ -773,7 +803,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生面對雙視圖逆向還原三維物體時，常常以...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "三維積木雙視圖極值約束不等式",
+    "tex_formula": "N_{\\min} \\le N_{\\text{積木}} \\le N_{\\max}, \\quad 7 \\le N \\le 11",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>7≤N≤11</m:t></m:r></m:oMath>"
   },
   {
     "week": 12,
@@ -781,7 +814,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次12: 長方體與正方體體積",
     "title": "國際物流『材積重』收費演算法——長寬高乘積背後的商業空間經濟學",
     "domain": "空間與形狀 (Space & Shape)",
-    "pisa_coords": "【內容範疇】空間與形狀 (Space & Shape) | 【情境】商業貿易與航空物流 | 【認知過程】三維空間度量與經濟決策建模 | 【前瞻要素】演算法審查、空間最佳化",
+    "pisa_coords": "【思維範疇】空間與形狀 (Space & Shape) | 【情境】商業貿易與航空物流 | 【認知過程】三維空間度量與經濟決策建模 | 【前瞻要素】演算法審查、空間最佳化",
     "text_scrutiny": "順豐速運與 DHL 國際航空快件運費計算單據審查：\n『國際空運計費重量取【實際重量】與【體積重量（材積重）】中的較大者。體積重計算公式為：長 (cm) × 闊 (cm) × 高 (cm) ÷ 6000』。\n市民陳先生寄送一個裝有特大太空棉抱枕的紙箱（長 60cm、闊 50cm、高 40cm），包裹實際秤重僅 2.5 kg。快遞員開出 20 kg 的運費收據，陳先生憤怒投訴『亂收費』。請你作為消委會數學仲裁員進行審核。",
     "misconception": "學生直覺認為『貨物重量就是秤上的指針讀數，憑什麼體積大就要多收錢？』無法理解飛機貨艙存在『容積（空間）約束』與『載重（質量）約束』的雙重物理極限。",
     "cer": {
@@ -840,7 +873,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生直覺認為『貨物重量就是秤上的指針讀數...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "空運物流材積重商業演算法",
+    "tex_formula": "W_{\\text{材積}} = \\frac{L \\times W \\times H}{6000}, \\quad W_{\\text{計費}} = \\max(W_{\\text{實重}}, W_{\\text{材積}})",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:sSub><m:sSubPr/><m:e><m:r><m:t>W</m:t></m:r></m:e><m:sub><m:r><m:t>材積</m:t></m:r></m:sub></m:sSub><m:r><m:t>=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>L·W·H</m:t></m:r></m:num><m:den><m:r><m:t>6000</m:t></m:r></m:den></m:f></m:oMath>"
   },
   {
     "week": 13,
@@ -848,7 +884,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次13: 不規則體積與排水法",
     "title": "阿基米德王冠之謎與沉降測量——排水法中的系統誤差與科學探究",
     "domain": "空間與形狀 (Space & Shape)",
-    "pisa_coords": "【內容範疇】空間與形狀 (Space & Shape) | 【情境】科學實驗與物理探究 | 【認知過程】實驗設計、轉化思想與誤差分析 | 【前瞻要素】探究設計、等量替換",
+    "pisa_coords": "【思維範疇】空間與形狀 (Space & Shape) | 【情境】科學實驗與物理探究 | 【認知過程】實驗設計、轉化思想與誤差分析 | 【前瞻要素】探究設計、等量替換",
     "text_scrutiny": "物理實驗室排水法測量不規則金屬工藝品體積。量筒底面積為 20 cm²，原本水深 5 cm。投入金屬塊完全浸沒後，水面上升至 8.2 cm。某實驗小組宣稱：『金屬塊體積為 20 × 8.2 = 164 cm³』；另一小組反駁：『不對，水溢出來了一點，而且金屬塊表面有氣泡！』引導學生審視測量原理與誤差來源。",
     "misconception": "學生常混淆『水面上升的高度（Δh）』與『水上升後的總高度（h_final）』，直接用總高度乘底面積；且缺乏對排水法中『物體吸水、水溢出、氣泡附著』等真實測量干擾因素的批判意識。",
     "cer": {
@@ -907,7 +943,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生常混淆『水面上升的高度（Δh）』與『...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "阿基米德排水法密度檢驗方程",
+    "tex_formula": "\\rho = \\frac{m}{\\Delta V} = \\frac{m}{V_2 - V_1} \\quad (\\rho_{\\text{純金}} = 19.3\\text{ g/cm}^3)",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>ρ=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>m</m:t></m:r></m:num><m:den><m:r><m:t>ΔV</m:t></m:r></m:den></m:f><m:r><m:t>=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>m</m:t></m:r></m:num><m:den><m:sSub><m:sSubPr/><m:e><m:r><m:t>V</m:t></m:r></m:e><m:sub><m:r><m:t>2</m:t></m:r></m:sub></m:sSub><m:r><m:t>-</m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>V</m:t></m:r></m:e><m:sub><m:r><m:t>1</m:t></m:r></m:sub></m:sSub></m:den></m:f></m:oMath>"
   },
   {
     "week": 14,
@@ -915,7 +954,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次14: 容量與體積的關係",
     "title": "澳門水塘蓄水與城市暴雨排澇——容積單位的升級轉化與氣候韌性",
     "domain": "空間與形狀 (Space & Shape)",
-    "pisa_coords": "【內容範疇】空間與形狀 (Space & Shape) | 【情境】城市水務與防災減災 | 【認知過程】跨維度單位換算與極端氣候容量建模 | 【前瞻要素】氣候素養、市政決策",
+    "pisa_coords": "【思維範疇】空間與形狀 (Space & Shape) | 【情境】城市水務與防災減災 | 【認知過程】跨維度單位換算與極端氣候容量建模 | 【前瞻要素】氣候素養、市政決策",
     "text_scrutiny": "澳門市政署與自來水公司數據通報：\n• 澳門半島大水塘蓄水量約為 190 萬立方米（m³）\n• 澳門半島陸地面積約為 9.3 平方公里（km²）\n百年一遇超強颱風帶來黑色暴雨，氣象局預報 3 小時內降雨量達 150 毫米（mm）。市政應急會議上，某實習生提議：『只要把大水塘抽空，全島雨水排進水塘就絕對不會淹水！』請你進行水利工程容積測算審計。",
     "misconception": "學生面對『平方公里（km²）、毫米（mm）、立方米（m³）、升（L）』等不同維度與前綴的單位換算時極易出錯，忘記平方與立方進率的十進制指數關係（1 km² = 1,000,000 m²）。",
     "cer": {
@@ -974,7 +1013,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生面對『平方公里（km²）、毫米（mm...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "降雨量與集水區蓄水體積轉換公式",
+    "tex_formula": "V_{\\text{雨水}} = R(\\text{mm}) \\times 10^{-3} \\times A(\\text{km}^2) \\times 10^6 = 1000 \\times R \\times A \\text{ (m}^3\\text{)}",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>V=1000·R·A (m³)</m:t></m:r></m:oMath>"
   },
   {
     "week": 15,
@@ -982,7 +1024,7 @@ const LESSONS_DATA = [
     "unit": "6上 課次15: 統計圖表 (折線圖)",
     "title": "全球氣候暖化與坐標軸截斷陷阱——MAIL 媒體數據批判與統計圖表審查",
     "domain": "不確定性與數據 (Uncertainty & Data)",
-    "pisa_coords": "【內容範疇】不確定性與數據 (Uncertainty & Data) | 【情境】氣候變化與媒體傳播 | 【認知過程】圖表批判性解讀與識別誤導手法 | 【前瞻要素】MAIL 媒體素養、視覺修辭審查",
+    "pisa_coords": "【思維範疇】不確定性與數據 (Uncertainty & Data) | 【情境】氣候變化與媒體傳播 | 【認知過程】圖表批判性解讀與識別誤導手法 | 【前瞻要素】MAIL 媒體素養、視覺修辭審查",
     "text_scrutiny": "社群媒體兩張關於澳門近十年平均氣溫變化的折線圖審查：\n圖表 A（環保組織發布）：縱坐標從 22.0°C 開始到 23.5°C，折線呈現劇烈的懸崖式陡峭上升，標題為《澳門氣候爆發式劇烈增溫！》\n圖表 B（懷疑論博客發布）：縱坐標從 0°C 開始到 100°C，折線呈現幾乎一動不動的水平直線，標題為《所謂氣候暖化完全是騙局，氣溫極度平穩！》\n兩張圖的底層觀測數據完全相同。引導學生審視坐標軸尺度對公眾心理的操弄。",
     "misconception": "學生極易被圖表線條的『視覺陡峭度』所欺騙，看圖不看坐標軸刻度（Scale），缺乏識別『坐標軸截斷（Truncated Graph）』或『刻度過度拉伸』的視覺批判力。",
     "cer": {
@@ -1041,7 +1083,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生極易被圖表線條的『視覺陡峭度』所欺騙...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "坐標軸截斷斜率視覺誇大係數",
+    "tex_formula": "K_{\\text{誇大}} = \\frac{y_{\\max} - y_{\\min(\\text{真實})}}{y_{\\max} - y_{\\min(\\text{截斷})}}",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:sSub><m:sSubPr/><m:e><m:r><m:t>K</m:t></m:r></m:e><m:sub><m:r><m:t>誇大</m:t></m:r></m:sub></m:sSub><m:r><m:t>=</m:t></m:r><m:f><m:fPr/><m:num><m:sSub><m:sSubPr/><m:e><m:r><m:t>y</m:t></m:r></m:e><m:sub><m:r><m:t>max</m:t></m:r></m:sub></m:sSub><m:r><m:t>-0</m:t></m:r></m:num><m:den><m:sSub><m:sSubPr/><m:e><m:r><m:t>y</m:t></m:r></m:e><m:sub><m:r><m:t>max</m:t></m:r></m:sub></m:sSub><m:r><m:t>-</m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>y</m:t></m:r></m:e><m:sub><m:r><m:t>截斷</m:t></m:r></m:sub></m:sSub></m:den></m:f></m:oMath>"
   },
   {
     "week": 16,
@@ -1049,7 +1094,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次16: 百分率應用 (一)",
     "title": "工廠質檢合格率與抽樣公正性——大數定律與樣本容量對決策的影響",
     "domain": "不確定性與數據 (Uncertainty & Data)",
-    "pisa_coords": "【內容範疇】不確定性與數據 (Uncertainty & Data) | 【情境】工業生產與質量保證 | 【認知過程】統計推斷與樣本代表性批判 | 【前瞻要素】MAIL 數據素養、抽樣偏差",
+    "pisa_coords": "【思維範疇】不確定性與數據 (Uncertainty & Data) | 【情境】工業生產與質量保證 | 【認知過程】統計推斷與樣本代表性批判 | 【前瞻要素】MAIL 數據素養、抽樣偏差",
     "text_scrutiny": "智能手錶電池供應商遴選大會。兩家電池廠商提供質檢報告：\n• 廠商 A：隨機抽檢 10 塊電池，全部合格，合格率高達【100%】！宣傳語：《零缺陷完美電池》\n• 廠商 B：隨機抽檢 10,000 塊電池，合格 9,920 塊，合格率為【99.2%】。\n採購經理提議：『100% 絕對優於 99.2%，我們必須把億元訂單全給廠商 A！』請你作為質量審計專家進行論證審核。",
     "misconception": "學生直觀認為『100% 肯定比 99.2% 好，因為 100% 沒有任何瑕疵』，嚴重忽視了樣本容量（Sample Size）太小時帶來的統計偶然性與極大隨機誤差。",
     "cer": {
@@ -1108,7 +1153,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生直觀認為『100% 肯定比 99.2...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "大數定律抽樣頻率收斂極限",
+    "tex_formula": "\\lim_{N \\to \\infty} \\frac{1}{N} \\sum_{i=1}^N X_i = p = 99.0\\%",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:f><m:fPr/><m:num><m:r><m:t>1</m:t></m:r></m:num><m:den><m:r><m:t>N</m:t></m:r></m:den></m:f><m:r><m:t>∑X→p</m:t></m:r></m:oMath>"
   },
   {
     "week": 17,
@@ -1116,7 +1164,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次17: 百分率應用 (二)",
     "title": "促銷折上折的算術審計與商家套路——為什麼百分率絕對不能直接相加？",
     "domain": "數量 (Quantity)",
-    "pisa_coords": "【內容範疇】數量 (Quantity) | 【情境】商業消費與市場營銷 | 【認知過程】基準量動態變更分析與數理求真 | 【前瞻要素】CER論證、消費者自衛",
+    "pisa_coords": "【思維範疇】數量 (Quantity) | 【情境】商業消費與市場營銷 | 【認知過程】基準量動態變更分析與數理求真 | 【前瞻要素】CER論證、消費者自衛",
     "text_scrutiny": "澳門雙十一購物節海報震撼宣傳：\n『全店狂歡大促銷！第一重：全單立享【八折（優惠20%）】；第二重：VIP會員在折後基礎上再享【折上折減20%】！合計狂省 40%，相當於全單直接打六折！』\n小敏媽媽看中標價 1000 元的智能吸塵器，結帳時收銀台顯示需支付 640 元，小敏媽媽質疑：『六折不是應該付 600 元嗎？為什麼多收了 40 元？』",
     "misconception": "學生普遍在直覺上將百分率當作普通整數進行直接相加：20% + 20% = 40%，誤以為『折上折』等同於兩次折扣百分比相加，無法洞察兩次打折的基準量已經發生了質的變化。",
     "cer": {
@@ -1175,7 +1223,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生普遍在直覺上將百分率當作普通整數進行...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "促銷折上折非線性複合率公式",
+    "tex_formula": "d_{\\text{實質}} = 1 - (1 - d_1)(1 - d_2) = d_1 + d_2 - d_1 d_2 \\neq d_1 + d_2",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:sSub><m:sSubPr/><m:e><m:r><m:t>d</m:t></m:r></m:e><m:sub><m:r><m:t>實質</m:t></m:r></m:sub></m:sSub><m:r><m:t>=1-(1-</m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>d</m:t></m:r></m:e><m:sub><m:r><m:t>1</m:t></m:r></m:sub></m:sSub><m:r><m:t>)(1-</m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>d</m:t></m:r></m:e><m:sub><m:r><m:t>2</m:t></m:r></m:sub></m:sSub><m:r><m:t>)</m:t></m:r></m:oMath>"
   },
   {
     "week": 18,
@@ -1183,7 +1234,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次18: 百分率應用 (三)",
     "title": "複利滾存與通膨下的家庭理財——『72法則』與指數成長思維",
     "domain": "變化與關係 (Change & Relationships)",
-    "pisa_coords": "【內容範疇】變化與關係 (Change & Relationships) | 【情境】家庭理財與宏觀經濟 | 【認知過程】指數級增長建模與金融素養 | 【前瞻要素】PISA金融素養、長期規劃",
+    "pisa_coords": "【思維範疇】變化與關係 (Change & Relationships) | 【情境】家庭理財與宏觀經濟 | 【認知過程】指數級增長建模與金融素養 | 【前瞻要素】PISA金融素養、長期規劃",
     "text_scrutiny": "澳門大西洋銀行（BNU）定期儲蓄與投資海報：\n『壓歲錢理財方案：本金 10,000 澳門元，年利率 6%。方案 A：每年單利計息，利息每年取出；方案 B：利息滾入本金按年複利計息』。\n理財顧問向小六學生介紹：『愛因斯坦說複利是世界第八大奇蹟。按照 6% 的年複利，你的資金翻倍大約只需 12 年！』引導學生審查單利與複利的長期倍增效應。",
     "misconception": "學生習慣了小學線性增長思維（每年拿 600 元利息），以為十年二十年後單利和複利差別不大，缺乏對『利滾利』指數爆炸式增長的直觀感知與估算工具。",
     "cer": {
@@ -1242,7 +1293,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生習慣了小學線性增長思維（每年拿 60...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "複利終值與 72 法則倍增週期",
+    "tex_formula": "A = P(1 + r)^t, \\quad T_{\\text{翻倍}} \\approx \\frac{72}{r}",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>A=P(1+r</m:t></m:r><m:sSup><m:sSupPr/><m:e><m:r><m:t>)</m:t></m:r></m:e><m:sup><m:r><m:t>t</m:t></m:r></m:sup></m:sSup><m:r><m:t>,  </m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>T</m:t></m:r></m:e><m:sub><m:r><m:t>翻倍</m:t></m:r></m:sub></m:sSub><m:r><m:t>≈72/r</m:t></m:r></m:oMath>"
   },
   {
     "week": 19,
@@ -1250,7 +1304,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次19: 圓的認識與對稱性",
     "title": "車輪為什麼必須是圓的？——圓心、半徑在運動中的幾何不變性與等寬曲線",
     "domain": "空間與形狀 (Space & Shape)",
-    "pisa_coords": "【內容範疇】空間與形狀 (Space & Shape) | 【情境】機械製造與物理工程 | 【認知過程】幾何性質的物理功能映射 | 【前瞻要素】幾何不變性、勒洛三角形",
+    "pisa_coords": "【思維範疇】空間與形狀 (Space & Shape) | 【情境】機械製造與物理工程 | 【認知過程】幾何性質的物理功能映射 | 【前瞻要素】幾何不變性、勒洛三角形",
     "text_scrutiny": "科技館互動展覽《奇妙的輪子》。展覽展示三輛異形自行車：一輛是『正方形輪子』、一輛是『橢圓形輪子』、一輛是『圓形輪子』。解說牌寫道：『車軸必須安裝在圓心，車輛行駛時車身才能保持在一條完美的水平線上，絲毫不發生上下顛簸。』現場展出了一種特殊的『勒洛三角形（Reuleaux Triangle）』，宣稱它也能當輪子滾動，引起全場轟動。",
     "misconception": "學生知道車輪是圓的，但只停留在『因為圓會滾』的直觀表面，無法用『同一圓內所有半徑相等、圓心到切線距離恆定』的幾何性質精確解釋為什麼運動平穩。",
     "cer": {
@@ -1309,7 +1363,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生知道車輪是圓的，但只停留在『因為圓會...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "圓形滾動不變性與偏心振幅公式",
+    "tex_formula": "y_{\\text{正圓}}(t) = R \\text{ (常數)}, \\quad y_{\\text{偏心}}(t) = R + e \\sin(\\omega t), \\quad \\Delta y = 2e",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>y(t)=R+e·sin(ωt),  Δy=2e</m:t></m:r></m:oMath>"
   },
   {
     "week": 20,
@@ -1317,7 +1374,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次20: 圓周率與圓周計算",
     "title": "祖沖之割圓術與極限逼近演算法——計算思維在圓周長推導中的應用",
     "domain": "空間與形狀 (Space & Shape)",
-    "pisa_coords": "【內容範疇】空間與形狀 (Space & Shape) | 【情境】數學史與現代計算機科學 | 【認知過程】極限逼近、迭代運算與誤差夾逼 | 【前瞻要素】LDW 計算思維、演算法極限",
+    "pisa_coords": "【思維範疇】空間與形狀 (Space & Shape) | 【情境】數學史與現代計算機科學 | 【認知過程】極限逼近、迭代運算與誤差夾逼 | 【前瞻要素】LDW 計算思維、演算法極限",
     "text_scrutiny": "課本出示公式 C = 2πr。公元 5 世紀中國數學家祖沖之將圓周率精確到 3.1415926 與 3.1415927 之間，領先世界千年。他是如何做到的？課堂出示魏晉劉徽『割圓術』記載：『割之彌細，所失彌少，割之又割，以至於不可割，則與圓周合體而無所失矣。』引導學生用正多邊形逼近圓周長。",
     "misconception": "學生以為 π 是一個普通的有限小數（3.14），或是某種魔法公式直接算出來的，缺乏對『用直代曲、無限逼近、內外夾逼』這一現代演算法靈魂的思想啟蒙。",
     "cer": {
@@ -1376,7 +1433,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生以為 π 是一個普通的有限小數（3....』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "祖沖之割圓術遞推與夾逼演算法",
+    "tex_formula": "s_{2n} = \\sqrt{2 - \\sqrt{4 - s_n^2}}, \\quad 3.1415926 < \\pi < 3.1415927",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>3.1415926&lt;π&lt;3.1415927</m:t></m:r></m:oMath>"
   },
   {
     "week": 21,
@@ -1384,7 +1444,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次21: 圓周長綜合應用",
     "title": "澳門蓮花球場 400米跑道起跑差精確測算——外道起跑線前移的代數模型",
     "domain": "空間與形狀 (Space & Shape)",
-    "pisa_coords": "【內容範疇】空間與形狀 (Space & Shape) | 【情境】體育競技與場地測繪 | 【認知過程】幾何代數化與公平性建模 | 【前瞻要素】工程精度、代數模型",
+    "pisa_coords": "【思維範疇】空間與形狀 (Space & Shape) | 【情境】體育競技與場地測繪 | 【認知過程】幾何代數化與公平性建模 | 【前瞻要素】工程精度、代數模型",
     "text_scrutiny": "澳門特區運動會 400 米決賽現場。觀眾席上有小學生提出質疑：『看！第 8 道選手起跑線比第 1 道足足往前挪了幾十米！這太不公平了，第 8 道是在公開作弊嗎？』裁判長出示國際田聯（WA）標準跑道圖紙：道寬 1.22 米，直道長 84.39 米，兩個半圓形彎道半徑由內向外逐道遞增。請你為現場觀眾進行數學釋疑。",
     "misconception": "學生直觀只看到直道是一樣長，但無法用代數公式抽象出『兩個彎道合起來剛好是一個完整的圓』，以為計算跑道差必須將直線和彎道全部加起來繁瑣運算，不知直道長度在做差時完全被消去。",
     "cer": {
@@ -1443,7 +1503,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生直觀只看到直道是一樣長，但無法用代數...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "400米跑道外道起跑差前移公式",
+    "tex_formula": "\\Delta = 2\\pi w(n - 1) \\approx 2 \\times 3.1416 \\times 1.22 \\times (n - 1) \\approx 7.67 \\times (n - 1) \\text{ (m)}",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>Δ=2πw(n-1)≈7.67(n-1)</m:t></m:r></m:oMath>"
   },
   {
     "week": 22,
@@ -1451,7 +1514,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次22: 圓的面積 (一)",
     "title": "化圓為方——轉化思想與微積分萌芽的幾何探究",
     "domain": "空間與形狀 (Space & Shape)",
-    "pisa_coords": "【內容範疇】空間與形狀 (Space & Shape) | 【情境】科學探索與純數學建模 | 【認知過程】幾何圖形等積變形與極限轉化 | 【前瞻要素】微積分萌芽、轉化思想",
+    "pisa_coords": "【思維範疇】空間與形狀 (Space & Shape) | 【情境】科學探索與純數學建模 | 【認知過程】幾何圖形等積變形與極限轉化 | 【前瞻要素】微積分萌芽、轉化思想",
     "text_scrutiny": "課本展示經典公式 S = πr²。課堂實物操作：將一個圓形硬紙板等分成 16 份扇形，交錯拼插成一個波浪形的近似平行四邊形；再將圓等分成 32 份、64 份拼插。學生提問：『邊緣明明是弧線，怎麼能當成直線長方形來算面積呢？』引導學生探究極限轉化的嚴密數學邏輯。",
     "misconception": "學生只把 πr² 當作機械公式來套用求值，不理解為什麼拼出的長方形的『長是 πr、寬是 r』，將『近似拼合』與『無窮極限下的嚴格相等』等同於粗糙估計。",
     "cer": {
@@ -1510,7 +1573,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生只把 πr² 當作機械公式來套用求值...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "化圓為方微積分極限轉化",
+    "tex_formula": "S = \\lim_{k \\to \\infty} (\\text{底} \\times \\text{高}) = (\\pi r) \\times r = \\pi r^2",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>S=(πr)·r=π</m:t></m:r><m:sSup><m:sSupPr/><m:e><m:r><m:t>r</m:t></m:r></m:e><m:sup><m:r><m:t>2</m:t></m:r></m:sup></m:sSup></m:oMath>"
   },
   {
     "week": 23,
@@ -1518,7 +1584,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次23: 圓的面積 (二)",
     "title": "披薩店的幾何密碼——面積二次方律與消費者性價比決策",
     "domain": "數量 (Quantity)",
-    "pisa_coords": "【內容範疇】數量 (Quantity) | 【情境】日常生活與消費經濟 | 【認知過程】幾何模型應用與非線性增長決策 | 【前瞻要素】面積平方律、消費者防禦",
+    "pisa_coords": "【思維範疇】數量 (Quantity) | 【情境】日常生活與消費經濟 | 【認知過程】幾何模型應用與非線性增長決策 | 【前瞻要素】面積平方律、消費者防禦",
     "text_scrutiny": "澳門某連鎖披薩店真實點餐情境：\n顧客點了一份 12 吋（直徑 12 英寸）的至尊披薩（售價 120 元）。服務生面帶微笑前來道歉：『抱歉先生，12 吋餅底用完了，我們免費為您升級替換為【兩個 8 吋】披薩，8 吋直徑是 8，8+8 = 16 吋，您賺了足足 4 吋！』顧客心滿意足準備答應。請你作為隨行朋友進行數學審查。",
     "misconception": "學生普遍陷入線性一維思維陷阱，認為『8 + 8 = 16 吋 > 12 吋，所以兩個 8 吋肯定更多』，混淆了直徑（一維長度）與面積（二維平方）的本質區別。",
     "cer": {
@@ -1577,7 +1643,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生普遍陷入線性一維思維陷阱，認為『8 ...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "圓面積二次方律與性價比判定",
+    "tex_formula": "\\frac{S_1}{S_2} = \\left(\\frac{D_1}{D_2}\\right)^2, \\quad \\frac{S_{12\\text{吋}}}{2 \\times S_{8\\text{吋}}} = \\frac{\\pi \\times 6^2}{2 \\times (\\pi \\times 4^2)} = \\frac{36\\pi}{32\\pi} = 1.125",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:f><m:fPr/><m:num><m:sSub><m:sSubPr/><m:e><m:r><m:t>S</m:t></m:r></m:e><m:sub><m:r><m:t>1</m:t></m:r></m:sub></m:sSub></m:num><m:den><m:sSub><m:sSubPr/><m:e><m:r><m:t>S</m:t></m:r></m:e><m:sub><m:r><m:t>2</m:t></m:r></m:sub></m:sSub></m:den></m:f><m:r><m:t>=(</m:t></m:r><m:f><m:fPr/><m:num><m:sSub><m:sSubPr/><m:e><m:r><m:t>D</m:t></m:r></m:e><m:sub><m:r><m:t>1</m:t></m:r></m:sub></m:sSub></m:num><m:den><m:sSub><m:sSubPr/><m:e><m:r><m:t>D</m:t></m:r></m:e><m:sub><m:r><m:t>2</m:t></m:r></m:sub></m:sSub></m:den></m:f><m:sSup><m:sSupPr/><m:e><m:r><m:t>)</m:t></m:r></m:e><m:sup><m:r><m:t>2</m:t></m:r></m:sup></m:sSup></m:oMath>"
   },
   {
     "week": 24,
@@ -1585,7 +1654,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次24: 速率的認識與換算",
     "title": "澳門友誼大橋區間測速與超速判斷——平均速率絕對不等於速率的平均值",
     "domain": "變化與關係 (Change & Relationships)",
-    "pisa_coords": "【內容範疇】變化與關係 (Change & Relationships) | 【情境】交通法規與行車安全 | 【認知過程】非線性調和平均數建模與物理分析 | 【前瞻要素】區間測速、反直覺論證",
+    "pisa_coords": "【思維範疇】變化與關係 (Change & Relationships) | 【情境】交通法規與行車安全 | 【認知過程】非線性調和平均數建模與物理分析 | 【前瞻要素】區間測速、反直覺論證",
     "text_scrutiny": "澳門治安警察局交通廳在友誼大橋（全長約 4.4 公里，限速 80 km/h）啟用區間測速系統。\n某司機駕駛私家車過橋：前半程（2.2公里）因避讓慢車，行駛速率為 60 km/h；後半程（2.2公里）路況通暢，司機將車速提高到 100 km/h。交警大隊以『全程平均超速』為由開出超速罰單。司機不服行政覆議：『前半程 60，後半程 100，我的平均速率剛好是 (60 + 100) ÷ 2 = 80 km/h，正好壓在限速上限，憑什麼罰我？』",
     "misconception": "學生根深蒂固地認為『平均速度就是兩個速度直接相加除以二』，混淆了『等時間平均（算術平均）』與『等距離平均（調和平均）』的物理適用條件，不知道慢速行駛耗費的時間更長。",
     "cer": {
@@ -1644,7 +1713,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生根深蒂固地認為『平均速度就是兩個速度...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "區間測速調和平均速率恆等式",
+    "tex_formula": "v_{\\text{調和}} = \\frac{2d}{\\frac{d}{v_1} + \\frac{d}{v_2}} = \\frac{2 v_1 v_2}{v_1 + v_2} \\le \\frac{v_1 + v_2}{2}",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:sSub><m:sSubPr/><m:e><m:r><m:t>v</m:t></m:r></m:e><m:sub><m:r><m:t>均</m:t></m:r></m:sub></m:sSub><m:r><m:t>=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>2·</m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>v</m:t></m:r></m:e><m:sub><m:r><m:t>1</m:t></m:r></m:sub></m:sSub><m:r><m:t>·</m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>v</m:t></m:r></m:e><m:sub><m:r><m:t>2</m:t></m:r></m:sub></m:sSub></m:num><m:den><m:sSub><m:sSubPr/><m:e><m:r><m:t>v</m:t></m:r></m:e><m:sub><m:r><m:t>1</m:t></m:r></m:sub></m:sSub><m:r><m:t>+</m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>v</m:t></m:r></m:e><m:sub><m:r><m:t>2</m:t></m:r></m:sub></m:sSub></m:den></m:f></m:oMath>"
   },
   {
     "week": 25,
@@ -1652,7 +1724,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次25: 速率的綜合應用",
     "title": "港珠澳大橋穿梭巴士相遇與追及——動態時空建模與關係方程",
     "domain": "變化與關係 (Change & Relationships)",
-    "pisa_coords": "【內容範疇】變化與關係 (Change & Relationships) | 【情境】智慧物流與城際交通 | 【認知過程】相對運動分析與多對象動態建模 | 【前瞻要素】時空建模、動態模擬",
+    "pisa_coords": "【思維範疇】變化與關係 (Change & Relationships) | 【情境】智慧物流與城際交通 | 【認知過程】相對運動分析與多對象動態建模 | 【前瞻要素】時空建模、動態模擬",
     "text_scrutiny": "港珠澳大橋（全長約 55 公里）穿梭金巴調度中心大屏幕動態追蹤：\n相遇情境：上午 9:00，甲巴從澳門口岸以 80 km/h 駛向香港，同時乙巴從香港口岸以 70 km/h 駛向澳門；\n追及情境：上午 9:30，一輛時速 60 km/h 的工程巡邏車已開出 15 公里，一輛時速 90 km/h 的特勤警車從同一起點出發緊急追趕。\n調度中心需要精確預測：兩車何時在海面橋上交錯相遇？警車行駛多少公里後能追上巡邏車？",
     "misconception": "學生面對雙向動態運動時大腦容易混亂，把各自行駛的路程與總路程割裂開來，缺乏將『相對速度（速度和 / 速度差）』作為系統整體變量進行降維處理的代數抽象能力。",
     "cer": {
@@ -1711,7 +1783,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生面對雙向動態運動時大腦容易混亂，把各...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "雙向穿梭巴士動態相遇與追及",
+    "tex_formula": "t_{\\text{相遇}} = \\frac{S_{\\text{總}}}{v_A + v_B}, \\quad t_{\\text{追及}} = \\frac{S_{\\text{距}}}{|v_A - v_B|}",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:sSub><m:sSubPr/><m:e><m:r><m:t>t</m:t></m:r></m:e><m:sub><m:r><m:t>遇</m:t></m:r></m:sub></m:sSub><m:r><m:t>=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>S</m:t></m:r></m:num><m:den><m:sSub><m:sSubPr/><m:e><m:r><m:t>v</m:t></m:r></m:e><m:sub><m:r><m:t>A</m:t></m:r></m:sub></m:sSub><m:r><m:t>+</m:t></m:r><m:sSub><m:sSubPr/><m:e><m:r><m:t>v</m:t></m:r></m:e><m:sub><m:r><m:t>B</m:t></m:r></m:sub></m:sSub></m:den></m:f></m:oMath>"
   },
   {
     "week": 26,
@@ -1719,7 +1794,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次26: 行程圖 (距離-時間圖)",
     "title": "解讀運動圖表——從折線看物理故事與斜率直覺",
     "domain": "變化與關係 (Change & Relationships)",
-    "pisa_coords": "【內容範疇】變化與關係 (Change & Relationships) | 【情境】日常生活與智能穿戴監測 | 【認知過程】圖表與物理現實相互轉化 | 【前瞻要素】多模態圖表解碼、斜率直覺",
+    "pisa_coords": "【思維範疇】變化與關係 (Change & Relationships) | 【情境】日常生活與智能穿戴監測 | 【認知過程】圖表與物理現實相互轉化 | 【前瞻要素】多模態圖表解碼、斜率直覺",
     "text_scrutiny": "澳門智慧手環記錄小強週六從聖五校區步行至大三巴牌坊再返回的『距離-時間（s-t）折線圖』審查：\n• 0-15 分鐘：線條平穩上升至 1200 米；\n• 15-35 分鐘：線條呈現一條水平直線（保持在 1200 米）；\n• 35-40 分鐘：線條劇烈陡峭上升至 1800 米；\n• 40-50 分鐘：線條呈現向下折返直達 0 米。\n體育老師提問：『水平線代表小強在飛速跑步嗎？線條下降代表小強在倒退著走嗎？哪一段運動速度最快？』",
     "misconception": "學生看圖表時容易把『折線形狀』直接等同於『地理地形或行走路線』，誤以為水平線是在平地走、上升是在爬坡、向下折返是從山頂走下來；或者不知道折線傾斜程度（斜率）代表速度大小。",
     "cer": {
@@ -1778,7 +1853,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生看圖表時容易把『折線形狀』直接等同於...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "位移時間折線斜率速率物理意義",
+    "tex_formula": "v = \\frac{\\Delta s}{\\Delta t} = \\frac{s_2 - s_1}{t_2 - t_1} \\text{ (直線斜率)}",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>v=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>Δs</m:t></m:r></m:num><m:den><m:r><m:t>Δt</m:t></m:r></m:den></m:f></m:oMath>"
   },
   {
     "week": 27,
@@ -1786,7 +1864,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次27: 簡易方程 (一)",
     "title": "天平平衡原理與代數等量思維——從『逆向算術反推』到『順向代數建模』",
     "domain": "變化與關係 (Change & Relationships)",
-    "pisa_coords": "【內容範疇】變化與關係 (Change & Relationships) | 【情境】科學實驗與代數結構 | 【認知過程】形式化符號表徵與等式基本性質 | 【前瞻要素】代數思維、結構對稱",
+    "pisa_coords": "【思維範疇】變化與關係 (Change & Relationships) | 【情境】科學實驗與代數結構 | 【認知過程】形式化符號表徵與等式基本性質 | 【前瞻要素】代數思維、結構對稱",
     "text_scrutiny": "物理天平砝碼實驗情境：\n天平左盤放著 3 個重量相同且標有『x』的神秘金屬球和 1 個 50 克的標準砝碼；右盤放著 1 個 200 克的標準砝碼，天平指針嚴格居中指向 0 刻度（完全平衡）。\n小明用算術法思考：『我先拿 200 減去 50 得 150，再除以 3 得 50！』\n老師引導：『如果問題變得無比複雜，包含多個未知量時，算術逆推往往讓人抓狂。如何用一個等式把天平兩邊的平衡關係記錄下來？』",
     "misconception": "小學生習慣了『看到加法用減法、看到乘法用除法』的逆向算術算式，面對方程『3x + 50 = 200』感到彆扭，總想一步寫出 x = (200-50)/3，抗拒『把未知數當作已知數參與運算』的代數思維躍遷。",
     "cer": {
@@ -1845,7 +1923,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『小學生習慣了『看到加法用減法、看到乘法用...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "天平平衡等式性質同解變形",
+    "tex_formula": "ax + b = cx + d \\implies (a - c)x = d - b \\implies x = \\frac{d - b}{a - c}",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>ax+b=cx+d ⇒ x=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>d-b</m:t></m:r></m:num><m:den><m:r><m:t>a-c</m:t></m:r></m:den></m:f></m:oMath>"
   },
   {
     "week": 28,
@@ -1853,7 +1934,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次28: 簡易方程 (二)",
     "title": "破解神奇讀心術——代數結構證明與魔術背後的恆等式",
     "domain": "變化與關係 (Change & Relationships)",
-    "pisa_coords": "【內容範疇】變化與關係 (Change & Relationships) | 【情境】休閒娛樂與魔術揭秘 | 【認知過程】符號運算化簡與恆等變形證明 | 【前瞻要素】形式化證明、消除迷信",
+    "pisa_coords": "【思維範疇】變化與關係 (Change & Relationships) | 【情境】休閒娛樂與魔術揭秘 | 【認知過程】符號運算化簡與恆等變形證明 | 【前瞻要素】形式化證明、消除迷信",
     "text_scrutiny": "街頭讀心術魔術表演互動：\n魔術師走向觀眾：『請你在心裡默想任意一個 1 到 100 之間的幸運數字，不要告訴任何人！現在跟隨我的指令計算：\n1. 把你的心想數字【乘以 2】；\n2. 加上【10】；\n3. 再減去【4】；\n4. 將現在的結果【除以 2】；\n5. 最後，減去你最開始心裡默想的那個數字！\n現在，看著我的眼睛... 我已經讀取了你的大腦信號！你最後算出來的數字絕對是【3】！』全場驚呼神奇。請你用代數方程揭開這個魔術的底牌。",
     "misconception": "學生被魔術師的引導話術震撼，誤以為魔術師真的具備超心理學超能力；缺乏用字母 x 設未知數，並運用整式乘除化簡將動態過程凝固為恆等式的代數證明意識。",
     "cer": {
@@ -1912,7 +1993,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生被魔術師的引導話術震撼，誤以為魔術師...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "讀心術代數消元恆等式證明",
+    "tex_formula": "f(x) = \\frac{3(x + 8) - 6}{3} - x = \\frac{3x + 18}{3} - x = (x + 6) - x \\equiv 6",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>f(x)=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>3(x+8)-6</m:t></m:r></m:num><m:den><m:r><m:t>3</m:t></m:r></m:den></m:f><m:r><m:t>-x≡6</m:t></m:r></m:oMath>"
   },
   {
     "week": 29,
@@ -1920,7 +2004,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次29: 列方程解應用題",
     "title": "澳門智慧停車場調度與雞兔同籠新解——多元資源分配的一元方程建模",
     "domain": "變化與關係 (Change & Relationships)",
-    "pisa_coords": "【內容範疇】變化與關係 (Change & Relationships) | 【情境】智慧城市與交通資源管理 | 【認知過程】約束條件轉化為方程模型並求解 | 【前瞻要素】LDW 模型抽象、最佳化思維",
+    "pisa_coords": "【思維範疇】變化與關係 (Change & Relationships) | 【情境】智慧城市與交通資源管理 | 【認知過程】約束條件轉化為方程模型並求解 | 【前瞻要素】LDW 模型抽象、最佳化思維",
     "text_scrutiny": "澳門氹仔某智慧地下停車場出入口車牌辨識系統故障。地磁傳感器讀數顯示：\n場內總共停泊了『私家車（4個輪子）』與『電單車/摩托車（2個輪子）』合計 45 輛，地磁感應器探測到的總輪胎接地面數為 140 個。物業主管手足無措：『到底有多少輛私家車？多少輛電單車？如果算錯了，收費對不上賬！』請你用列方程建模的方法解決這個澳門現代版『雞兔同籠』問題。",
     "misconception": "學生面對雙變量問題時容易感到無從下手，或停留在小學三年級的『抬腳法 / 砍足法 / 假設法』列表猜測，缺乏『設一個為 x，另一個自然表徵為 (總數 - x)』的消元建模魄力。",
     "cer": {
@@ -1979,7 +2063,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生面對雙變量問題時容易感到無從下手，或...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "雞兔同籠一元一次代數模型",
+    "tex_formula": "C = \\frac{W - 2N}{4 - 2} = \\frac{W - 2N}{2}, \\quad M = N - C",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>C=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>W-2N</m:t></m:r></m:num><m:den><m:r><m:t>2</m:t></m:r></m:den></m:f><m:r><m:t>,  M=N-C</m:t></m:r></m:oMath>"
   },
   {
     "week": 30,
@@ -1987,7 +2074,7 @@ const LESSONS_DATA = [
     "unit": "6下 課次30: 綜合數據審查與大結局",
     "title": "平均薪資 5 萬的真相——MAIL 大數據批判、極值影響與中位數仲裁",
     "domain": "不確定性與數據 (Uncertainty & Data)",
-    "pisa_coords": "【內容範疇】不確定性與數據 (Uncertainty & Data) | 【情境】社會經濟公報與網絡媒體傳播 | 【認知過程】統計指標批判與抗偏誤審計 | 【前瞻要素】MAIL 媒體與AI素養、數據求真終極考核",
+    "pisa_coords": "【思維範疇】不確定性與數據 (Uncertainty & Data) | 【情境】社會經濟公報與網絡媒體傳播 | 【認知過程】統計指標批判與抗偏誤審計 | 【前瞻要素】MAIL 媒體與AI素養、數據求真終極考核",
     "text_scrutiny": "澳門某網路論壇引發全澳熱議的新聞通告審查：\n某新興科技公司發布招聘宣傳：《本公司員工待遇極佳，全體員工月【平均工資高達 50,000 澳門元】！》\n然而，該公司前台小麗、程序員阿強、客服小美等 9 名基層員工紛紛在網上控訴自己被欺騙：『我們每個月實際到手只有 12,000 到 15,000 元，到底誰拿走了 5 萬？我們嚴重被平均了！』\n工會介入調查，獲得該公司全體 10 名員工的真實月工資數據清單：\n• 總裁（1人）：360,000 元\n• 高級經理（1人）：40,000 元\n• 骨幹員工（3人）：各 18,000 元\n• 基層員工（5人）：各 12,000 元\n引導全體小六畢業生以 PISA 2029 頂級數據公民的視角，對該招聘廣告展開終極審查大辯論。",
     "misconception": "學生普遍盲目迷信『平均數（Mean）』，認為平均數就代表了全體成員的普遍水平；缺乏對『離群極端值（Outlier）』嚴重扭曲平均數的警惕，不知在偏態分佈下中位數（Median）與眾數（Mode）才是更誠實的代表。",
     "cer": {
@@ -2046,7 +2133,10 @@ const LESSONS_DATA = [
         "✔ 突破"
       ]
     ],
-    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力的反駁了『學生普遍盲目迷信『平均數（Mean）』，...』的直覺迷思。"
+    "summary_prompt": "【規律發現】透過本週動態實驗，我們發現：當變數發生改變時，其底層數學結構遵循______原理，有力反駁了常見的直覺迷思。",
+    "omml_title": "薪資分佈極值偏移度量方程",
+    "tex_formula": "\\bar{X} = \\frac{1}{N}\\sum_{i=1}^N x_i, \\quad \\text{Bias} = \\bar{X} - \\text{Median}",
+    "omml_xml": "<m:oMath xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\"><m:r><m:t>X̄=</m:t></m:r><m:f><m:fPr/><m:num><m:r><m:t>∑x</m:t></m:r></m:num><m:den><m:r><m:t>N</m:t></m:r></m:den></m:f><m:r><m:t>,  Bias=X̄-Median</m:t></m:r></m:oMath>"
   }
 ];
 
@@ -2071,6 +2161,14 @@ const lessonSearch = document.getElementById('lessonSearch');
 const filterTabs = document.querySelectorAll('.filter-tab');
 const toastEl = document.getElementById('toast');
 
+// OMML Elements
+const ommlTitleEl = document.getElementById('ommlTitle');
+const mathjaxFormulaEl = document.getElementById('mathjaxFormula');
+const ommlXmlBox = document.getElementById('ommlXmlBox');
+const ommlXmlText = document.getElementById('ommlXmlText');
+const btnCopyOmml = document.getElementById('btnCopyOmml');
+const btnToggleOmmlXml = document.getElementById('btnToggleOmmlXml');
+
 // Initialize App
 document.addEventListener('DOMContentLoaded', () => {
   populateSidebar();
@@ -2083,7 +2181,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function showToast(msg) {
   toastEl.textContent = msg;
   toastEl.classList.add('show');
-  setTimeout(() => toastEl.classList.remove('show'), 2200);
+  setTimeout(() => toastEl.classList.remove('show'), 2400);
 }
 
 // Populate Sidebar
@@ -2092,11 +2190,9 @@ function populateSidebar() {
   const searchVal = lessonSearch.value.trim().toLowerCase();
 
   LESSONS_DATA.forEach(l => {
-    // Filter by term
     if (currentFilter === 't1' && l.week > 15) return;
     if (currentFilter === 't2' && l.week <= 15) return;
 
-    // Filter by search
     if (searchVal) {
       const match = l.title.toLowerCase().includes(searchVal) ||
                     l.unit.toLowerCase().includes(searchVal) ||
@@ -2160,6 +2256,47 @@ function setupEventListeners() {
     }
   };
 
+  // OMML XML Toggle
+  btnToggleOmmlXml.onclick = () => {
+    if (ommlXmlBox.style.display === 'none') {
+      ommlXmlBox.style.display = 'flex';
+      btnToggleOmmlXml.textContent = '隱藏 XML';
+    } else {
+      ommlXmlBox.style.display = 'none';
+      btnToggleOmmlXml.textContent = '檢視 XML';
+    }
+  };
+
+  // Copy OMML to Clipboard (Word Equation format)
+  btnCopyOmml.onclick = () => {
+    const lesson = LESSONS_DATA[currentWeek - 1];
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(lesson.omml_xml).then(() => {
+        btnCopyOmml.innerHTML = '<i class="fa-solid fa-check"></i> 已複製 OMML！';
+        btnCopyOmml.classList.add('copied');
+        showToast('已複製 OMML 數學公式！在 Word 中貼上即可轉為原生方程式。');
+        setTimeout(() => {
+          btnCopyOmml.innerHTML = '<i class="fa-solid fa-copy"></i> 複製 Word 原生 OMML 公式';
+          btnCopyOmml.classList.remove('copied');
+        }, 2200);
+      }).catch(() => {
+        copyFallback(lesson.omml_xml);
+      });
+    } else {
+      copyFallback(lesson.omml_xml);
+    }
+  };
+
+  function copyFallback(text) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    showToast('已複製 OMML 數學公式代碼！');
+  }
+
   // Keyboard navigation
   window.addEventListener('keydown', (e) => {
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
@@ -2207,7 +2344,7 @@ function loadWeek(week) {
   document.getElementById('bannerTitle').textContent = lesson.title;
   document.getElementById('bannerCoords').textContent = lesson.pisa_coords;
 
-  // Context & Guide
+  // Context & Guide (Neutral kid-friendly phrasing)
   document.getElementById('contextText').textContent = lesson.text_scrutiny;
   document.getElementById('misconceptionText').textContent = lesson.misconception;
   document.getElementById('expPrinciple').textContent = `★ 實驗原理：${lesson.exp_principle}`;
@@ -2220,12 +2357,22 @@ function loadWeek(week) {
     stepsList.appendChild(li);
   });
 
-  // CER
+  // Kid-Friendly Math Courtroom (CER)
   document.getElementById('cerClaim').textContent = lesson.cer.claim;
   document.getElementById('cerEvidence').textContent = lesson.cer.evidence;
   document.getElementById('cerReasoning').textContent = lesson.cer.reasoning;
   document.getElementById('cerRebuttal').textContent = lesson.cer.rebuttal;
   cerCard.classList.add('collapsed');
+
+  // OMML Native Formula
+  ommlTitleEl.textContent = `本課核心數學方程式（OMML 原生輸出） · ${lesson.omml_title}`;
+  mathjaxFormulaEl.innerHTML = `$$\\displaystyle ${lesson.tex_formula}$$`;
+  ommlXmlText.value = lesson.omml_xml;
+
+  // Trigger MathJax Typesetting
+  if (window.MathJax && window.MathJax.typesetPromise) {
+    MathJax.typesetPromise([mathjaxFormulaEl]).catch(() => {});
+  }
 
   // CPS Challenge
   document.getElementById('cpsChallengeText').textContent = lesson.cps_challenge;
@@ -2361,15 +2508,12 @@ function initExp_W1(controls, canvas, ctx, readout, resetBtn) {
     const ratioVal = (juice / water).toFixed(2);
     const concPercent = ((juice / total) * 100).toFixed(1);
 
-    // Draw
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Draw 3 fixed comparison beakers + 1 interactive beaker
     drawBeaker(ctx, 120, 320, 1, 2, 'A款 (1:2)', '0.50', '33.3%');
     drawBeaker(ctx, 270, 320, 1, 4, 'B款 (1:4)', '0.25', '20.0%');
     drawBeaker(ctx, 420, 320, 1, 5, 'C款 (1:5)', '0.20', '16.7%');
     drawBeaker(ctx, 580, 320, juice, water, `當前 (${juice}:${water})`, ratioVal, concPercent + '%', true);
 
-    // Readout
     readout.innerHTML = `
       <div class="readout-item"><span class="readout-lbl">配比:</span><span class="readout-val">${juice} : ${water}</span></div>
       <div class="readout-item"><span class="readout-lbl">比值 (前÷後):</span><span class="readout-val highlight">${ratioVal}</span></div>
@@ -2392,26 +2536,21 @@ function initExp_W1(controls, canvas, ctx, readout, resetBtn) {
     c.save();
     c.lineWidth = isCur ? 3 : 2;
     c.strokeStyle = isCur ? '#2563eb' : '#475569';
-    // Glass beaker body
     c.strokeRect(x - bw/2, y - bh, bw, bh);
 
-    // Liquid fill
     const conc = j / (j + w);
     const fillH = Math.min(bh - 10, (j + w) * 16);
-    // Color gradient based on concentration
     const r = Math.floor(255);
     const g = Math.floor(180 - conc * 120);
     const b = Math.floor(20);
     c.fillStyle = `rgb(${r}, ${g}, ${b})`;
     c.fillRect(x - bw/2 + 2, y - fillH, bw - 4, fillH);
 
-    // Top meniscus
     c.beginPath();
     c.ellipse(x, y - fillH, (bw-4)/2, 6, 0, 0, Math.PI * 2);
     c.fillStyle = `rgba(${r}, ${g}, ${b}, 0.8)`;
     c.fill();
 
-    // Labels
     c.fillStyle = isCur ? '#1e40af' : '#1e293b';
     c.font = isCur ? 'bold 13px sans-serif' : '12px sans-serif';
     c.textAlign = 'center';
@@ -2470,28 +2609,22 @@ function initExp_W2(controls, canvas, ctx, readout, resetBtn) {
     const totalParts = 1 + ratioN;
     const bleach = (totalVol / totalParts).toFixed(1);
     const water = (totalVol - bleach).toFixed(1);
-    const ppm = Math.round((bleach / totalVol) * 50000); // assume 5% raw bleach = 50,000 ppm
+    const ppm = Math.round((bleach / totalVol) * 50000);
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Draw sprayer tank
     ctx.save();
     ctx.strokeStyle = '#1e293b';
     ctx.lineWidth = 3;
-    // Tank shape
     ctx.strokeRect(180, 100, 180, 240);
-    // Water layer
     ctx.fillStyle = '#bae6fd';
     ctx.fillRect(182, 120, 176, 218);
-    // Bleach layer at bottom/dropper
     ctx.fillStyle = '#fde047';
     ctx.fillRect(182, 310, 176, 28);
 
-    // Dropper on top
     ctx.fillStyle = '#eab308';
     ctx.fillRect(250, 40, 40, 50);
     ctx.strokeRect(250, 40, 40, 50);
 
-    // Measurements & Labels
     ctx.fillStyle = '#0f172a';
     ctx.font = 'bold 15px sans-serif';
     ctx.fillText(`消毒桶總量: ${totalVol} mL`, 420, 150);
@@ -2503,7 +2636,6 @@ function initExp_W2(controls, canvas, ctx, readout, resetBtn) {
     ctx.fillStyle = '#475569';
     ctx.fillText(`有效氯預估: ~${ppm} ppm`, 420, 250);
 
-    // Gauge Status
     let statusText = '✔ 符合衛生局防護標準';
     let statusColor = '#16a34a';
     if (ratioN === 120) {
@@ -2541,7 +2673,7 @@ function initExp_W2(controls, canvas, ctx, readout, resetBtn) {
 }
 
 // -------------------------------------------------------------
-// Week 3: 分物悖論與倒數的幾何實體意義 (Fraction Division)
+// Week 3: 分物悖論與倒數幾何實體意義 (Fraction Division)
 // -------------------------------------------------------------
 function initExp_W3(controls, canvas, ctx, readout, resetBtn) {
   controls.innerHTML = `
@@ -2561,7 +2693,7 @@ function initExp_W3(controls, canvas, ctx, readout, resetBtn) {
   `;
 
   let length = 3;
-  let num = 1, den = 2; // fraction = 1/2
+  let num = 1, den = 2;
   const slLen = document.getElementById('slLen');
   const bf1 = document.getElementById('bFrac1'), bf2 = document.getElementById('bFrac2'),
         bf3 = document.getElementById('bFrac3'), bf4 = document.getElementById('bFrac4');
@@ -2586,19 +2718,16 @@ function initExp_W3(controls, canvas, ctx, readout, resetBtn) {
     const count = (length / segSize).toFixed(1);
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Draw ribbon scale
     const startX = 60, startY = 160, totalWidth = 560;
     const pxPerMeter = totalWidth / length;
 
     ctx.save();
-    // Ruler base
     ctx.fillStyle = '#e2e8f0';
     ctx.fillRect(startX, startY - 20, totalWidth, 60);
     ctx.strokeStyle = '#334155';
     ctx.lineWidth = 2;
     ctx.strokeRect(startX, startY - 20, totalWidth, 60);
 
-    // Meter ticks
     for (let m = 0; m <= length; m++) {
       const x = startX + m * pxPerMeter;
       ctx.beginPath();
@@ -2613,7 +2742,6 @@ function initExp_W3(controls, canvas, ctx, readout, resetBtn) {
       ctx.fillText(`${m} 米`, x, startY + 65);
     }
 
-    // Segment cuts
     const segPx = segSize * pxPerMeter;
     const numCuts = Math.floor(length / segSize);
     for (let i = 0; i < numCuts; i++) {
@@ -2626,7 +2754,6 @@ function initExp_W3(controls, canvas, ctx, readout, resetBtn) {
       ctx.fillText(`段${i+1}`, cx + segPx/2, startY + 14);
     }
 
-    // Explain formula
     ctx.fillStyle = '#0f172a';
     ctx.font = 'bold 16px sans-serif';
     ctx.textAlign = 'left';
@@ -2660,7 +2787,7 @@ function initExp_W3(controls, canvas, ctx, readout, resetBtn) {
 }
 
 // -------------------------------------------------------------
-// Weeks 4 to 30 generic interactive renderers
+// Week 4: 合作工程與工作效率極限預測 (Work Efficiency)
 // -------------------------------------------------------------
 function initExp_W4(controls, canvas, ctx, readout, resetBtn) {
   controls.innerHTML = `
@@ -2686,7 +2813,6 @@ function initExp_W4(controls, canvas, ctx, readout, resetBtn) {
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.save();
-    // Compare bars
     ctx.font = 'bold 14px sans-serif';
     ctx.fillStyle = '#0f172a';
     ctx.fillText('每日工作效率 (疊加產能):', 60, 70);
@@ -2703,7 +2829,6 @@ function initExp_W4(controls, canvas, ctx, readout, resetBtn) {
     ctx.fillRect(60, 190, effTot * 800, 35);
     ctx.fillText(`合作每日總效率: 1/${a} + 1/${b} = ${effTot.toFixed(3)} (${(effTot*100).toFixed(1)}%)`, 70 + effTot * 800, 212);
 
-    // Days comparison
     ctx.font = 'bold 16px sans-serif';
     ctx.fillStyle = '#16a34a';
     ctx.fillText(`✔ 真實合作工期: 1 ÷ ${effTot.toFixed(3)} = ${realDays} 天 (產能疊加)`, 60, 280);
@@ -2753,7 +2878,6 @@ for (let w = 5; w <= 30; w++) {
       ctx.font = 'bold 16px sans-serif';
       ctx.fillText(`第 ${w} 週動態實驗沙盒：${lesson.title}`, 50, 60);
 
-      // Draw interactive dynamic graph
       ctx.fillStyle = '#e2e8f0';
       ctx.fillRect(50, 90, 600, 220);
       ctx.strokeStyle = '#3b82f6';

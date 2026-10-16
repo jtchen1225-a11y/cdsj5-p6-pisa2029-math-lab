@@ -3,10 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>聖若瑟教區中學第五校 · 小六數學思維課 (30週) 面向 PISA 2029 互動實驗室</title>
-  <meta name="description" content="聖若瑟教區中學第五校小六數學思維課30週校本教材互動實驗室，面向PISA 2029全球素養培育，涵蓋數量、空間與形狀、變化與關係、不確定性與數據及MAIL/LDW前瞻素養。">
+  <title>聖若瑟教區中學第五校 · 小六數學思維課 (30週) 全球前瞻素養互動實驗室</title>
+  <meta name="description" content="聖若瑟教區中學第五校小六數學思維課30週校本教材互動實驗室，面向全球前瞻核心素養培育，涵蓋數量、空間與形狀、變化與關係、不確定性與數據及計算思維/資訊審查。原生支援 OMML 數學方程式與動態沙盒操作。">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- MathJax 3 for Native Mathematical Typography & OMML/MathML Rendering -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
   <!-- Header Bar -->
@@ -16,7 +27,7 @@
       <div class="brand">
         <span class="badge-school">聖若瑟五校 · 校本教材</span>
         <h1 class="brand-title">小六數學思維課 30 週互動實驗室</h1>
-        <span class="badge-pisa"><i class="fa-solid fa-compass"></i> 面向 PISA 2029</span>
+        <span class="badge-pisa"><i class="fa-solid fa-compass"></i> 全球前瞻核心素養</span>
       </div>
     </div>
     <div class="header-center">
@@ -27,7 +38,7 @@
       </div>
     </div>
     <div class="header-right">
-      <button id="btnToggleCER" class="btn-action"><i class="fa-solid fa-gavel"></i> <span class="hide-sm">CER真相</span></button>
+      <button id="btnToggleCER" class="btn-action"><i class="fa-solid fa-gavel"></i> <span class="hide-sm">思維法庭真相</span></button>
       <button id="btnFullscreen" class="btn-icon" title="全螢幕投影"><i class="fa-solid fa-expand"></i></button>
     </div>
   </header>
@@ -67,18 +78,18 @@
 
       <!-- Grid Layout: Left Control & Info / Right Interactive Sandbox -->
       <div class="lab-grid">
-        <!-- Left Panel: Context & Instructions & CER -->
+        <!-- Left Panel: Context & Instructions & Kid-Friendly Courtroom -->
         <div class="panel-left">
-          <!-- Real-world Context Card -->
+          <!-- Real-world Context Card (Neutral Title) -->
           <div class="card context-card">
             <div class="card-header">
               <i class="fa-solid fa-newspaper text-primary"></i>
-              <h3>一、 PISA 2029 素養情境導引與文本審查</h3>
+              <h3>一、 生活真實情境導引與資訊審查</h3>
             </div>
             <div class="card-body">
               <div id="contextText" class="context-desc"></div>
               <div class="misconception-box">
-                <div class="miscon-title"><i class="fa-solid fa-triangle-exclamation text-warning"></i> 思考陷阱與直覺迷思：</div>
+                <div class="miscon-title"><i class="fa-solid fa-triangle-exclamation text-warning"></i> 思考盲區與直覺迷思：</div>
                 <div id="misconceptionText" class="miscon-desc"></div>
               </div>
             </div>
@@ -96,36 +107,37 @@
             </div>
           </div>
 
-          <!-- CER Argumentation Card -->
+          <!-- Kid-Friendly CER Courtroom Card -->
           <div id="cerCard" class="card cer-card collapsed">
             <div class="card-header" id="cerHeader">
               <i class="fa-solid fa-shield-halved text-success"></i>
-              <h3>三、 CER 學術論證實踐（點擊展開/收起真相）</h3>
+              <h3>三、 數學小法庭：思維論證四步走（點擊展開/收起真相）</h3>
               <i class="fa-solid fa-chevron-down cer-arrow"></i>
             </div>
             <div class="card-body cer-content">
               <div class="cer-item cer-claim">
-                <span class="cer-tag tag-claim">🟢 主張 (Claim)</span>
+                <span class="cer-tag tag-claim">🟢 我的主張 (Claim) · 亮出觀點立場</span>
                 <p id="cerClaim"></p>
               </div>
               <div class="cer-item cer-evidence">
-                <span class="cer-tag tag-evidence">🟡 證據 (Evidence)</span>
+                <span class="cer-tag tag-evidence">🟡 事實證據 (Evidence) · 拿事實與數據算理</span>
                 <p id="cerEvidence"></p>
               </div>
               <div class="cer-item cer-reasoning">
-                <span class="cer-tag tag-reasoning">🔵 推理 (Reasoning)</span>
+                <span class="cer-tag tag-reasoning">🔵 數學道理 (Reasoning) · 講清背後模型原理</span>
                 <p id="cerReasoning"></p>
               </div>
               <div class="cer-item cer-rebuttal">
-                <span class="cer-tag tag-rebuttal">🔴 反駁 (Rebuttal)</span>
+                <span class="cer-tag tag-rebuttal">🔴 擊破迷思 (Rebuttal) · 反駁直覺想當然</span>
                 <p id="cerRebuttal"></p>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Right Panel: Dynamic Interactive Sandbox -->
+        <!-- Right Panel: Dynamic Interactive Sandbox & OMML Equation Card -->
         <div class="panel-right">
+          <!-- Sandbox Card -->
           <div class="card sandbox-card">
             <div class="card-header sandbox-header">
               <div class="sandbox-title">
@@ -158,6 +170,29 @@
             </div>
           </div>
 
+          <!-- OMML Native Math Formula Card (NEW) -->
+          <div class="card omml-card">
+            <div class="card-header omml-header">
+              <div class="omml-header-left">
+                <i class="fa-solid fa-square-root-variable text-primary"></i>
+                <h3 id="ommlTitle">本課核心數學方程式 (OMML 原生輸出)</h3>
+              </div>
+              <div class="omml-header-right">
+                <button id="btnCopyOmml" class="btn-copy-omml" title="點擊複製 Word 原生 OMML 公式代碼"><i class="fa-solid fa-copy"></i> 複製 Word 原生 OMML 公式</button>
+                <button id="btnToggleOmmlXml" class="btn-secondary btn-xs" title="檢視 OMML XML 源代碼">檢視 XML</button>
+              </div>
+            </div>
+            <div class="card-body omml-body">
+              <div id="mathjaxFormula" class="mathjax-formula-box">
+                <!-- MathJax renders TeX/MathML formula here -->
+              </div>
+              <div id="ommlXmlBox" class="omml-xml-box" style="display: none;">
+                <textarea id="ommlXmlText" readonly class="omml-textarea"></textarea>
+                <div class="omml-tip">💡 提示：在 Word 中按快捷鍵 Alt + = 開啟公式輸入框，粘貼上述 XML 代碼即自動轉換為 Office 原生編輯方程式！</div>
+              </div>
+            </div>
+          </div>
+
           <!-- Dynamic Observation Table Card -->
           <div class="card table-card">
             <div class="card-header">
@@ -175,11 +210,11 @@
             </div>
           </div>
 
-          <!-- CPS Challenge Card -->
+          <!-- CPS Challenge Card (Neutral Title) -->
           <div class="card cps-card">
             <div class="card-header">
               <i class="fa-solid fa-brain text-warning"></i>
-              <h3>四、 PISA 2029 計算思維與演算法拓展挑戰</h3>
+              <h3>四、 計算思維與演算法高階拓展挑戰</h3>
             </div>
             <div class="card-body">
               <p id="cpsChallengeText" class="cps-desc"></p>
@@ -193,7 +228,7 @@
   <!-- Notification Toast -->
   <div id="toast" class="toast"></div>
 
-  <!-- Data Script -->
+  <!-- Main Engine Script -->
   <script src="app.js"></script>
 </body>
 </html>
