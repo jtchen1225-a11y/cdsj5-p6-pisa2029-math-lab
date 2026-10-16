@@ -133,6 +133,28 @@
               </div>
             </div>
           </div>
+
+          <!-- CPS Challenge Card (Neutral Title & Collapsible Reference Solution) -->
+          <div class="card cps-card">
+            <div class="card-header">
+              <i class="fa-solid fa-brain text-warning"></i>
+              <h3>四、 計算思維與演算法高階拓展挑戰</h3>
+            </div>
+            <div class="card-body">
+              <div id="cpsChallengeText" class="cps-desc"></div>
+              <div class="cps-solution-container">
+                <button id="btnToggleSolution" class="btn-toggle-solution" type="button">
+                  <i class="fa-solid fa-lightbulb"></i> <span id="solutionBtnText">查看參考解答與思維解析</span>
+                </button>
+                <div id="solutionBox" class="solution-box" style="display: none;">
+                  <div class="solution-header">
+                    <i class="fa-solid fa-circle-check text-success"></i> <strong>參考解答與演算法分步解析：</strong>
+                  </div>
+                  <div id="solutionContent" class="solution-content"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Right Panel: Dynamic Interactive Sandbox & OMML Equation Card -->
@@ -175,10 +197,10 @@
             <div class="card-header omml-header">
               <div class="omml-header-left">
                 <i class="fa-solid fa-square-root-variable text-primary"></i>
-                <h3 id="ommlTitle">本課核心數學方程式 (OMML 原生輸出)</h3>
+                <h3 id="ommlTitle">本課核心數學模型方程式</h3>
               </div>
               <div class="omml-header-right">
-                <button id="btnCopyOmml" class="btn-copy-omml" title="點擊複製 Word 原生 OMML 公式代碼"><i class="fa-solid fa-copy"></i> 複製 Word 原生 OMML 公式</button>
+                <button id="btnCopyOmml" class="btn-copy-omml" title="點擊複製數學公式，可直接貼入 Word"><i class="fa-solid fa-copy"></i> 複製數學公式</button>
                 <button id="btnToggleOmmlXml" class="btn-secondary btn-xs" title="檢視 OMML XML 源代碼">檢視 XML</button>
               </div>
             </div>
@@ -210,15 +232,7 @@
             </div>
           </div>
 
-          <!-- CPS Challenge Card (Neutral Title) -->
-          <div class="card cps-card">
-            <div class="card-header">
-              <i class="fa-solid fa-brain text-warning"></i>
-              <h3>四、 計算思維與演算法高階拓展挑戰</h3>
-            </div>
-            <div class="card-body">
-              <p id="cpsChallengeText" class="cps-desc"></p>
-            </div>
+          
           </div>
         </div>
       </div>
